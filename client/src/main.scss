@@ -1,0 +1,26 @@
+@import "./scss/variables/variable";
+@import "./scss/component/buttons";
+@import "./scss/component/carousel";
+@import "./scss/layout/navbar";
+@import "./scss/layout/footer";
+@import "./scss/component/authform";
+@import "./scss/misc/gallary";
+@import "./scss/misc/searchform";
+@import "./scss/component/contactForm";
+@import "./scss/pages/home";
+@import "./scss//pages/manufacturer";
+
+body,
+html {
+    font-family: "PT Sans", sans-serif;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    .card-panel {
+        background-color: rgba(65, 100, 102, 0.898);
+    }
+}
+
+.contain {
+    margin: 1px 2%;
+}

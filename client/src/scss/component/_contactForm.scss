@@ -1,0 +1,19 @@
+div.ContactForm {
+    width: 100%;
+    margin: 2% 2%;
+    padding: 2% 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    > form {
+        // background-color: $FormRed;
+        padding: 2% 2%;
+        width: 55%;
+        box-shadow: 0 2px 5px black;
+    }
+}
+
+.button {
+    @include buttonA(180px);
+}

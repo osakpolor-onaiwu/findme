@@ -1,0 +1,4 @@
+{
+    "mongoURI":"mongodb+srv://osakpolor:daniel1995@cluster0.6awrn.mongodb.net/findme?retryWrites=true&w=majority",
+    "jwtSecret":"myJwtSecret"
+}

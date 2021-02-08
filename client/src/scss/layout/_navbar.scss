@@ -1,0 +1,100 @@
+div#navbar {
+    background: $backgroundBlue;
+    margin: -1.5% 0 1.5% 0;
+    position: relative;
+
+    ul#nav-large {
+        width: 100%;
+        display: flex;
+        list-style: none;
+        li {
+            padding: 2% 10px 5px 10px;
+            color: white;
+            transition: all 0.5s;
+            &:hover {
+                background-color: rgba(5, 23, 43, 0.754);
+            }
+        }
+        .navigation-link {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+        }
+        img {
+            margin: -15px 0 0 0;
+            width: 100px;
+            height: 50px;
+        }
+    }
+}
+
+.mydrop-trigger {
+    margin-right: 40%;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    transition: all 0.5s;
+    display: flex;
+    background: $backgroundBlue;
+    flex-wrap: wrap;
+    width: 700px;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    margin-left: -2%;
+    animation: slideDown 0.2s ease-in normal;
+    @keyframes slideDown {
+        0% {
+            transform: translateY(-100px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+    li {
+        flex-basis: 31%;
+        margin: 1% 1%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    // mobile navigation
+    div#mobileNavbar {
+        background: $backgroundBlue;
+        position: relative;
+        padding: 15px 10px;
+        display: flex;
+        .logo {
+            margin: -10px 72% 0 10px;
+            font-size: 15px;
+            font-weight: bold;
+            img {
+                width: 100px;
+                height: 40px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    // mobile navigation
+    div#mobileNavbar {
+        background: $backgroundBlue;
+        position: relative;
+        padding: 15px 10px;
+        display: flex;
+        .logo {
+            margin: -10px 60% 0 10px;
+            font-size: 15px;
+            font-weight: bold;
+            img {
+                width: 100px;
+                height: 40px;
+            }
+        }
+    }
+}

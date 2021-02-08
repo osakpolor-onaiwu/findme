@@ -1,0 +1,80 @@
+@media only screen and (min-width: 501px) {
+    div.authform {
+        width: 100%;
+        margin: 3% auto;
+    }
+
+    form.black-text {
+        margin: 50px auto auto auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        padding: 3% 5% 1% 5%;
+        width: 55%;
+        box-shadow: 0 2px 10px black;
+        background-color: rgba(247, 236, 236, 0.782);
+        label {
+            margin: 20px 0 5px 0;
+        }
+
+        input {
+            height: 45px;
+            border-radius: 0px;
+            padding: 0 0 0 5px;
+            margin-bottom: 5px;
+            transition: all 0.5s;
+        }
+
+        .butlink {
+            color: white;
+            text-decoration: none;
+        }
+        button {
+            @include buttonA(150px);
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    div.authform {
+        width: 100%;
+        margin: 3% auto;
+    }
+
+    form.black-text {
+        margin: 50px 3% auto 4%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: black;
+        padding: 5% 10% 1% 10%;
+        width: 90%;
+        box-shadow: 0 2px 10px black;
+        background-color: rgba(247, 236, 236, 0.782);
+
+        label {
+            margin: 20px 0 5px 0;
+        }
+
+        input {
+            height: 45px;
+
+            border-radius: 0px;
+            padding: 0 0 0 5px;
+            margin-bottom: 5px;
+            transition: all 0.5s;
+        }
+
+        .butlink {
+            color: white;
+            text-decoration: none;
+        }
+
+        button {
+            @include buttonA(150px);
+        }
+    }
+}
