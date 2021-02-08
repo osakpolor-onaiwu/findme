@@ -1,43 +1,38 @@
-import axios from 'axios'
-import GetError from './errorAction'
-
-
+import axios from 'axios';
+import GetError from './errorAction';
 
 //Login User
- const LoginAction=(userDetails)=>{
- return (dispatch)=>{
+const LoginAction = (userDetails) => {
+  return (dispatch) => {
     //headers
-    const config={
-        headers:{
-            "Content-Type":"application/json"
-        }
-    }
+    const config = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    };
 
     //Request body
-    const body=JSON.stringify(userDetails)
-    console.log(body)
-   
+    const body = JSON.stringify(userDetails);
+    console.log(body);
 
-    axios.post("/findme/api/auth",body,config)
-    .then(res=>{
+    axios
+      .post('/auth', body, config)
+      .then((res) => {
         dispatch({
-            type:"LOGIN_SUCCESS",
-            user:res.data,
-            userDetail:userDetails
-        })
-    })
-    .catch(err=>{
-        dispatch(GetError(err.response.data,err.response.status,'LOGIN_FAIL'))
+          type: 'LOGIN_SUCCESS',
+          user: res.data,
+          userDetail: userDetails,
+        });
+      })
+      .catch((err) => {
+        dispatch(
+          GetError(err.response.data, err.response.status, 'LOGIN_FAIL'),
+        );
         dispatch({
-            type:"LOGIN_ERROR",
-        })
-    })
- };
+          type: 'LOGIN_ERROR',
+        });
+      });
+  };
+};
 
-}
-
-
-export default LoginAction
-
-
-
+export default LoginAction;

@@ -46,12 +46,12 @@ app.use('/samples', express.static('samples'));
 //this means any request to /foodblog/api/customers should use
 //the route in CustomerApi file
 
-app.use('/findme/api/categories', Categories);
-app.use('/findme/api/manufacturers', Manufacturers);
-app.use('/findme/api/users', User);
-app.use('/findme/api/auth', Auth);
-app.use('/findme/api/samples', Sample);
-app.use('/findme/api/contactManufacturer', ContactManufacturer);
+app.use('/categories', Categories);
+app.use('/manufacturers', Manufacturers);
+app.use('/users', User);
+app.use('/auth', Auth);
+app.use('/samples', Sample);
+app.use('/contactManufacturer', ContactManufacturer);
 
 const PORT = process.env.PORT || 5000;
 
