@@ -23,7 +23,7 @@ div#navbar {
         img {
             margin: -15px 0 0 0;
             width: 100px;
-            height: 50px;
+            height: 45px;
         }
     }
 }
@@ -62,7 +62,6 @@ div#navbar {
 }
 
 @media screen and (min-width: 500px) {
-    // mobile navigation
     div#mobileNavbar {
         background: $backgroundBlue;
         position: relative;

@@ -9,17 +9,18 @@ export const Categories = ({ category }) => {
     const categories = category.length ? (
       category.map((categoryItem) => {
         return (
-          <div key={categoryItem._id} className='col s6 m4 l2 xl3'>
+          <div key={categoryItem._id} className='col s6 m4 l3'>
             <NavLink to={`/category/${categoryItem.name}`}>
-              <div className='card-panel white center'>
+              <div className='card-box white center'>
                 <img
                   className='category-image center'
                   src={categoryItem.image}
                   alt='category image'
                 />
-                <h6 className='card-content black-text center'>
+                <h6 className='card-text white-text center'>
                   {categoryItem.name}
                 </h6>
+                <div></div>
               </div>
             </NavLink>
           </div>

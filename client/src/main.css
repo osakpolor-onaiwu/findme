@@ -5,13 +5,13 @@
   }
   div.slides {
     width: 100%;
-    height: 500px;
+    height: 300px;
     position: relative;
     text-align: center;
   }
   div.slides > img {
     width: 100%;
-    height: 500px;
+    height: 300px;
     background-color: rgba(0, 0, 0, 0.809);
   }
   div.slides div.search {
@@ -38,13 +38,13 @@
   }
   div.slides {
     width: 100%;
-    height: 350px;
+    height: 250px;
     position: relative;
     text-align: center;
   }
   div.slides > img {
     width: 100%;
-    height: 350px;
+    height: 250px;
   }
   div.slides div.search {
     position: absolute;
@@ -70,13 +70,13 @@
   }
   div.slides {
     width: 100%;
-    height: 270px;
+    height: 200px;
     position: relative;
     text-align: center;
   }
   div.slides > img {
     width: 100%;
-    height: 270px;
+    height: 200px;
   }
   div.slides div.search {
     position: absolute;
@@ -96,7 +96,7 @@
 }
 
 div#navbar {
-  background: rgba(15, 59, 108, 0.82);
+  background: #10386b;
   margin: -1.5% 0 1.5% 0;
   position: relative;
 }
@@ -129,7 +129,7 @@ div#navbar ul#nav-large .navigation-link {
 div#navbar ul#nav-large img {
   margin: -15px 0 0 0;
   width: 100px;
-  height: 50px;
+  height: 45px;
 }
 
 .mydrop-trigger {
@@ -146,7 +146,7 @@ div#navbar ul#nav-large img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  background: rgba(15, 59, 108, 0.82);
+  background: #10386b;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 700px;
@@ -188,7 +188,7 @@ div#navbar ul#nav-large img {
 
 @media screen and (min-width: 500px) {
   div#mobileNavbar {
-    background: rgba(15, 59, 108, 0.82);
+    background: #10386b;
     position: relative;
     padding: 15px 10px;
     display: -webkit-box;
@@ -208,7 +208,7 @@ div#navbar ul#nav-large img {
 
 @media screen and (max-width: 500px) {
   div#mobileNavbar {
-    background: rgba(15, 59, 108, 0.82);
+    background: #10386b;
     position: relative;
     padding: 15px 10px;
     display: -webkit-box;
@@ -227,7 +227,7 @@ div#navbar ul#nav-large img {
 }
 
 footer.page-footer {
-  background-color: rgba(15, 59, 108, 0.82);
+  background-color: #10386b;
 }
 
 @media only screen and (min-width: 501px) {
@@ -335,60 +335,76 @@ footer.page-footer {
 }
 
 @media screen and (min-width: 721px) {
-  .category-image {
-    height: 80px;
-    width: 45%;
-    margin-bottom: 15px;
-  }
-  h6.card-content {
-    margin: -15px auto;
-    font-size: 18px;
-  }
-  div.news-text {
+  div.card-box {
+    width: 100%;
+    height: 230px;
     position: relative;
+    margin-bottom: 5px;
   }
-  div.news-text > #newsImage {
+  div.card-box .category-image {
+    height: 90%;
     width: 100%;
-    margin: 5px 2px;
-    height: 220px;
-    opacity: 0.1;
   }
-  div.news-text h6#newsletter {
+  div.card-box h6.card-text {
+    font-size: 18px;
+    padding: 4px 5px;
+    background: #10386b;
     position: absolute;
-    width: 100%;
-    bottom: 50%;
-    padding-right: 5px;
-    padding-left: 5px;
-    font-size: 27px;
+    z-index: 1;
+    bottom: 25px;
+    left: -10px;
+    width: 85%;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+  }
+  div.card-box div {
+    background: #10386b;
+    padding: 4px 5px;
+    height: 10px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%);
+    position: absolute;
+    z-index: -1;
+    left: -11px;
+    width: 85%;
+    bottom: 23px;
   }
 }
 
 @media screen and (max-width: 720px) {
-  .category-image {
-    height: 50px;
-    width: 45%;
-    margin-bottom: 15px;
-  }
-  h6.card-content {
-    margin: -15px auto;
-    font-size: 12px;
-  }
-  div.news-text {
+  div.card-box {
+    width: 100%;
+    height: 230px;
     position: relative;
+    margin-bottom: 5px;
   }
-  div.news-text > #newsImage {
+  div.card-box .category-image {
+    height: 90%;
     width: 100%;
-    margin: 5px 2px;
-    height: 100px;
-    opacity: 0.1;
   }
-  div.news-text h6#newsletter {
+  div.card-box h6.card-text {
+    font-size: 14px;
+    padding: 4px 5px;
+    background: #10386b;
     position: absolute;
-    width: 100%;
-    bottom: 50%;
-    padding-right: 5px;
-    padding-left: 5px;
-    font-size: 20px;
+    z-index: 1;
+    bottom: 25px;
+    left: -7px;
+    width: 85%;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+  }
+  div.card-box div {
+    background: #10386b;
+    padding: 4px 5px;
+    height: 10px;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 5% 100%);
+    position: absolute;
+    z-index: -1;
+    left: -7px;
+    width: 85%;
+    bottom: 23px;
   }
 }
 
@@ -401,7 +417,7 @@ footer.page-footer {
     width: 65%;
     height: 35px;
     border: 1px darkcyan solid;
-    border-radius: 30px;
+    border-radius: 3px;
     padding-left: 5px;
   }
   form#navform:focus {
@@ -420,7 +436,7 @@ footer.page-footer {
     width: 95%;
     height: 35px;
     border: 1px darkcyan solid;
-    border-radius: 30px;
+    border-radius: 3px;
     padding-left: 5px;
   }
   form#navform:focus {
@@ -439,7 +455,7 @@ footer.page-footer {
     width: 90%;
     height: 35px;
     border: 1px darkcyan solid;
-    border-radius: 30px;
+    border-radius: 3px;
     padding-left: 5px;
   }
   form#navform:focus {

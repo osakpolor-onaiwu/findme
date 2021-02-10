@@ -1,18 +1,17 @@
 const express = require('express');
 const config = require('config');
 const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
 //init express
 const app = express();
 
 //this imports our customer api file in our router
 
-const Categories = require('./routers/api/categoryApi');
-const Manufacturers = require('./routers/api/manufacturerApi');
-const Sample = require('./routers/api/samples');
-const User = require('./routers/api/userApi');
-const Auth = require('./routers/api/auth');
-const ContactManufacturer = require('./routers/api/contact_manufacturer');
+const Categories = require('./routers/categoryApi');
+const Manufacturers = require('./routers/manufacturerApi');
+const Sample = require('./routers/samples');
+const User = require('./routers/userApi');
+const Auth = require('./routers/auth');
+const ContactManufacturer = require('./routers/contact_manufacturer');
 
 //allow Post request from client
 //helps parses the data to json
@@ -43,7 +42,7 @@ db.on('error', (err) => {
 app.use('/uploads', express.static('uploads'));
 app.use('/samples', express.static('samples'));
 
-//this means any request to /foodblog/api/customers should use
+//this means any request to /foodblog/customers should use
 //the route in CustomerApi file
 
 app.use('/categories', Categories);
