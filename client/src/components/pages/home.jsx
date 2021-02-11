@@ -19,9 +19,9 @@ export class Home extends Component {
         </section>
         <section className='row bottom-row'>
           <div className='col l12 m12 s12 '>
-            <h4>
+            <h5>
               Service Providers: {manufacturers.length} || Clients:{}
-            </h4>
+            </h5>
           </div>
         </section>
       </main>

@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-
+const controller = require('../controllers/categoryControl');
 //imports multer
 const multer = require('multer');
 
@@ -38,41 +38,12 @@ const upload = multer({
 
 const Category = require('../models/category');
 
-router.post('/', upload.single('image'), (req, res) => {
-  console.log(req.file);
-  const newCategory = new Category({
-    name: req.body.name,
-    image: req.file.path,
-  });
+router.post('/', upload.single('image'), controller.create);
 
-  newCategory
-    .save()
-    .then((category) => res.status(200).json(category))
-    .catch((err) => res.status(400).json(err));
-});
+router.get('/', controller.readAll);
 
-router.get('/', (req, res) => {
-  Category.find()
-    .select('-manufacturer')
-    .then((category) => res.status(200).json(category))
-    .catch((err) => res.status(400).json(err));
-});
+router.put('/:id', upload.single('image'), controller.update);
 
-router.put('/:id', upload.single('image'), (req, res) => {
-  const { name } = req.body;
-  const updateCategory = {
-    name,
-    image: req.file.path,
-  };
-  Category.findByIdAndUpdate(req.params.id, updateCategory, { new: true })
-    .then((category) => res.status(200).json(category))
-    .catch((err) => res.status(400).json(err));
-});
-
-router.delete('/:id', (req, res) => {
-  Category.findByIdAndDelete(req.params.id)
-    .then((data) => res.status(200).json(data))
-    .catch((err) => res.status(400).json(err));
-});
+router.delete('/:id', controller.delete);
 
 module.exports = router;
