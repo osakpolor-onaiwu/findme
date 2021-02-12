@@ -46,7 +46,12 @@ export const Categories = ({ category }) => {
     return categories;
   };
 
-  return <main id='category'>{categoriesgallary()}</main>;
+  return (
+    <main id='category'>
+      <h5 className='center'>Categories</h5>
+      {categoriesgallary()}
+    </main>
+  );
 };
 
 const mapStateToProps = (state) => ({

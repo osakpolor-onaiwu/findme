@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import Carousels from '../extra/carousel';
 import Categories from '../extra/categories';
 
+import HorizontalScroll from '../extra/horizontalscroll';
+
 export class Home extends Component {
   render() {
     const { manufacturers } = this.props;
@@ -11,7 +13,9 @@ export class Home extends Component {
         <section className='row carousel-section'>
           <Carousels />
         </section>
-
+        <section className='row'>
+          <HorizontalScroll />
+        </section>
         <section className='row'>
           <div className='col  s12'>
             <Categories />

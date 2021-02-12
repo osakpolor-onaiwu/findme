@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import SearchForm from '../extra/search';
 import { MessageSquare } from 'react-feather';
 
-export const ManufacturerContact = ({ sample }) => {
+export const ManufacturerContact = ({ sample, manufacturer }) => {
   const iniState = {
     first_name: '',
     last_name: '',
@@ -27,7 +27,7 @@ export const ManufacturerContact = ({ sample }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-
+  console.log(manufacturer);
   const samplesgallary = () => {
     const samples = sample.length ? (
       sample.map((samplesItem) => {
@@ -59,6 +59,9 @@ export const ManufacturerContact = ({ sample }) => {
     <main className='contain'>
       <div className='row'>{samplesgallary()}</div>
       <div className='row contain'>
+        <div className='row'>
+          <h3>{manufacturer.name}</h3>
+        </div>
         <div className='ContactForm col s12'>
           <form onSubmit={handleSubmit}>
             <div className='center '>
@@ -145,11 +148,14 @@ export const ManufacturerContact = ({ sample }) => {
 };
 
 const mapStateToProps = (state, ownprops) => {
-  console.log(state.manufacturers.samples);
   let id = ownprops.match.params.manufacturerContact;
+  let name = ownprops.match.params.manufacturerContact;
   return {
     sample: state.manufacturers.samples.filter((sample) => {
       return sample.id == id;
+    }),
+    manufacturer: state.manufacturers.manufacturers.filter((seller) => {
+      return seller.name == name;
     }),
   };
 };

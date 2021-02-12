@@ -5,13 +5,13 @@ export default function Carousels() {
   return (
     <main id='top-banner'>
       <div className='slides white-text'>
-        <img src='./Banner.jpg' alt='topbanner' />
+        <img src='./hero.png' alt='topbanner' />
         <div className='search'>
           <SearchForm />
         </div>
 
         <h6 className='white-text'>
-          We make getting your desired service a piece of cake
+          We help you get your desired service to your doorstep
         </h6>
       </div>
     </main>

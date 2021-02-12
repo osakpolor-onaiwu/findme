@@ -31,8 +31,7 @@ const upload = multer({
   },
   fileFilter,
 });
-
-const Samples = require('../models/samples');
+Samples = require('../models/samples');
 
 router.post('/', upload.single('image'), (req, res) => {
   const { description, manufacturer } = req.body;

@@ -424,6 +424,14 @@ footer.page-footer {
             box-shadow: 0 0 10px darkcyan;
     border-radius: 30px;
   }
+  form#navform p.result-container {
+    margin-top: -15px;
+    width: 65%;
+    margin: -15px auto 0 auto;
+    background-color: white;
+    text-align: left;
+    padding-left: 15px;
+  }
 }
 
 @media only screen and (min-width: 641px) and (max-width: 920px) {
@@ -443,6 +451,14 @@ footer.page-footer {
             box-shadow: 0 0 10px darkcyan;
     border-radius: 30px;
   }
+  form#navform p.result-container {
+    margin-top: -15px;
+    width: 95%;
+    margin: -15px auto 0 auto;
+    background-color: white;
+    text-align: left;
+    padding-left: 15px;
+  }
 }
 
 @media only screen and (max-width: 640px) {
@@ -461,6 +477,14 @@ footer.page-footer {
     -webkit-box-shadow: 0 0 10px darkcyan;
             box-shadow: 0 0 10px darkcyan;
     border-radius: 30px;
+  }
+  form#navform p.result-container {
+    margin-top: -15px;
+    width: 90%;
+    margin: -15px auto 0 auto;
+    background-color: white;
+    text-align: left;
+    padding-left: 15px;
   }
 }
 
@@ -688,6 +712,6 @@ html .card-panel {
 }
 
 .contain {
-  margin: 1px 2%;
+  margin: 1% 1%;
 }
 /*# sourceMappingURL=main.css.map */
