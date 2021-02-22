@@ -87,7 +87,7 @@
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 19px;
     font-weight: bold;
   }
 }
@@ -373,7 +373,7 @@ footer.page-footer {
 @media screen and (max-width: 720px) {
   div.card-box {
     width: 100%;
-    height: 230px;
+    height: 150px;
     position: relative;
     margin-bottom: 5px;
   }
@@ -424,7 +424,7 @@ footer.page-footer {
             box-shadow: 0 0 10px darkcyan;
     border-radius: 30px;
   }
-  form#navform p.result-container {
+  form#navform div.result-container {
     margin-top: -15px;
     width: 65%;
     margin: -15px auto 0 auto;
@@ -468,7 +468,7 @@ footer.page-footer {
   }
   form#navform > input {
     width: 90%;
-    height: 35px;
+    height: 30px;
     border: 1px darkcyan solid;
     border-radius: 3px;
     padding-left: 5px;
@@ -698,17 +698,115 @@ div.manufacturer h5 {
   font-size: 18px;
 }
 
+@media screen and (min-width: 601px) {
+  .menu-item {
+    padding: 0 0px;
+    margin: 5px 2px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 180px;
+  }
+  img.scroll-image {
+    width: 170px;
+    height: 180px;
+  }
+  .scroll-text {
+    font-size: 16px;
+  }
+  .scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .menu-item {
+    padding: 0 0px;
+    margin: 5px 2px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    width: 100px;
+  }
+  img.scroll-image {
+    width: 100px;
+    height: 110px;
+  }
+  .scroll-text {
+    font-size: 12px;
+  }
+  .scroll-menu-arrow {
+    padding: 5px;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 921px) {
+  main.carousel {
+    height: 350px;
+    width: 100%;
+    padding: 0 2%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main.carousel section.right-side {
+    width: 100%;
+  }
+  main.carousel section.right-side img {
+    height: 270px;
+    width: 100%;
+  }
+  main.carousel section.left-side {
+    width: 100%;
+  }
+  main.carousel section.left-side img {
+    height: 270px;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 720px) and (max-width: 920px) {
+  main.carousel {
+    height: 250px;
+    width: 100%;
+    padding: 0 2%;
+  }
+  main.carousel section.right-side {
+    padding: 0;
+    margin: 0;
+  }
+  main.carousel section.right-side img {
+    height: 250px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  main.carousel {
+    height: 200px;
+    width: 100%;
+    padding: 0 2%;
+  }
+  main.carousel section.right-side {
+    padding: 0;
+    margin: 0;
+  }
+  main.carousel section.right-side img {
+    height: 200px;
+    width: 100%;
+  }
+}
+
 body,
 html {
   font-family: 'Roboto', sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   overflow-x: hidden;
-}
-
-body .card-panel,
-html .card-panel {
-  background-color: rgba(65, 100, 102, 0.898);
 }
 
 .contain {

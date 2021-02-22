@@ -1,15 +1,18 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
+const SampleController = require('../controllers/sampleController');
 const path = require('path');
+//imports multer
+const multer = require('multer');
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './samples');
+//defines how files should be stored
+var storage = multer.diskStorage({
+  destination: function (req, file, callback) {
+    callback(null, './uploads');
   },
-
-  filename: (req, file, cb) => {
-    cb(
+  //sets that the file should be stored with its extension name
+  filename: function (req, file, callback) {
+    callback(
       null,
       file.fieldname + '-' + Date.now() + path.extname(file.originalname),
     );
@@ -17,7 +20,7 @@ const storage = multer.diskStorage({
 });
 
 const fileFilter = (req, file, cb) => {
-  if (file.mimeType === 'image/jpeg' || file.mimeType === 'image/png') {
+  if (file.mimetype === 'image/jpeg' || file.mimetype === 'image/png') {
     cb(null, true);
   } else {
     cb(null, false);
@@ -25,52 +28,19 @@ const fileFilter = (req, file, cb) => {
 };
 
 const upload = multer({
-  storage,
+  storage: storage,
   limits: {
-    fileSize: 1024 * 1024 * 1,
+    fileSize: 1024 * 1024 * 2.5,
   },
-  fileFilter,
-});
-Samples = require('../models/samples');
-
-router.post('/', upload.single('image'), (req, res) => {
-  const { description, manufacturer } = req.body;
-
-  const newSample = new Samples({
-    description,
-    image: req.file.path,
-    manufacturer,
-  });
-
-  newSample
-    .save()
-    .then((sample) => res.status(200).json(sample))
-    .catch((err) => res.status(400).json(err));
+  fileFilter: fileFilter,
 });
 
-router.get('/', (req, res) => {
-  Samples.find()
-    .populate('manufacturer')
-    .then((sample) => res.status(200).json(sample))
-    .catch((err) => res.status(400).json(err));
-});
+router.post('/', upload.single('image'), SampleController.create);
 
-router.put('/:id', upload.single('image'), (req, res) => {
-  const { description, manufacturer } = req.body;
-  const update = {
-    description,
-    image: req.file.path,
-    manufacturer,
-  };
-  Samples.findByIdAndUpdate(req.params.id, update, { new: true })
-    .then((sample) => res.status(200).json(sample))
-    .catch((err) => res.status(400).json(err));
-});
+router.get('/', SampleController.read);
 
-router.delete('/:id', (req, res) => {
-  Samples.findByIdAndDelete(req.params.id)
-    .then((data) => res.status(200).json(data))
-    .catch((err) => res.status(400).json(err));
-});
+router.put('/:id', SampleController.update);
+
+router.delete('/:id', SampleController.delete);
 
 module.exports = router;

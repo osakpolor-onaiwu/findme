@@ -13,7 +13,6 @@ const LoginAction = (userDetails) => {
 
     //Request body
     const body = JSON.stringify(userDetails);
-    console.log(body);
 
     axios
       .post('/auth', body, config)

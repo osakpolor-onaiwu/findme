@@ -27,22 +27,31 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
-  console.log(manufacturer);
+
+  const name = manufacturer.map((serviceProvider) => {
+    return (
+      <div>
+        <h3>{serviceProvider.companyName}</h3>
+        <h5>{serviceProvider.description} </h5>
+      </div>
+    );
+  });
+
   const samplesgallary = () => {
     const samples = sample.length ? (
       sample.map((samplesItem) => {
         return (
-          <div key={samplesItem.id} className='col s6 m4 l3 xl3'>
-            <div className='card center'>
-              <div className='card-image center'>
-                <img
-                  id='samplesImage'
-                  style={{ height: '200px' }}
-                  src={samplesItem.image}
-                  className='img-responsive '
-                />
-              </div>
-              <h6 className='center card-content'>{samplesItem.description}</h6>
+          <div key={samplesItem._id} className='col s6 m4 l3 xl3'>
+            <div className='card-box white center'>
+              <img
+                className='category-image center'
+                src={samplesItem.image}
+                alt='Sample image'
+              />
+              <h6 className='card-text white-text center'>
+                {samplesItem.name}
+              </h6>
+              <div></div>
             </div>
           </div>
         );
@@ -57,17 +66,17 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
 
   return (
     <main className='contain'>
+      <div className='row center'>{name}</div>
       <div className='row'>{samplesgallary()}</div>
+
       <div className='row contain'>
-        <div className='row'>
-          <h3>{manufacturer.name}</h3>
-        </div>
         <div className='ContactForm col s12'>
           <form onSubmit={handleSubmit}>
             <div className='center '>
               <MessageSquare color='black' size='30' />
               <h5>Contact this server Provider</h5>
             </div>
+
             <div className='input-field col s12 l6'>
               <input
                 required={true}
@@ -79,6 +88,7 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
               />
               <label htmlFor='first_name'>First Name</label>
             </div>
+
             <div className='input-field col s12 l6'>
               <input
                 required={true}
@@ -90,6 +100,7 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
               />
               <label htmlFor='last_name'>Last Name</label>
             </div>
+
             <div className='input-field col s12'>
               <input
                 required={true}
@@ -103,6 +114,7 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
                 Email
               </label>
             </div>
+
             <div className='input-field col s12'>
               <input
                 required={true}
@@ -116,6 +128,7 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
                 Phone
               </label>
             </div>
+
             <div className='input-field browser-default col s12'>
               <textarea
                 id='textarea1'
@@ -125,6 +138,7 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
               ></textarea>
               <label htmlFor='message'>Describe what you want</label>
             </div>
+
             <div className='input-field col s12 '>
               <input
                 required={true}
@@ -150,13 +164,17 @@ export const ManufacturerContact = ({ sample, manufacturer }) => {
 const mapStateToProps = (state, ownprops) => {
   let id = ownprops.match.params.manufacturerContact;
   let name = ownprops.match.params.manufacturerContact;
+
   return {
     sample: state.manufacturers.samples.filter((sample) => {
-      return sample.id == id;
+      return sample.manufacturer.companyName == name;
     }),
-    manufacturer: state.manufacturers.manufacturers.filter((seller) => {
-      return seller.name == name;
-    }),
+
+    manufacturer: state.manufacturers.manufacturers.filter(
+      (serviceProvider) => {
+        return serviceProvider.companyName == name;
+      },
+    ),
   };
 };
 const mapDispatchToProps = {};

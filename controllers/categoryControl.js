@@ -1,13 +1,6 @@
 const Category = require('../models/category');
 
 const categorycontroller = {
-  readAll(req, res) {
-    Category.find()
-      .select('-manufacturer')
-      .then((category) => res.status(200).json(category))
-      .catch((err) => res.status(400).json(err));
-  },
-
   create(req, res) {
     const newCategory = new Category({
       name: req.body.name,
@@ -16,6 +9,13 @@ const categorycontroller = {
 
     newCategory
       .save()
+      .then((category) => res.status(200).json(category))
+      .catch((err) => res.status(400).json(err));
+  },
+
+  readAll(req, res) {
+    Category.find()
+      .select('-manufacturer')
       .then((category) => res.status(200).json(category))
       .catch((err) => res.status(400).json(err));
   },

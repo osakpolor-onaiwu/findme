@@ -26,10 +26,10 @@ const Manufacturers = ({ manufacturers }) => {
             <div key={manufacturer._id} className='col s12 m6 l4'>
               <NavLink
                 className='black-text manufacturer-container'
-                to={`/manufacturer/${manufacturer.name}`}
+                to={`/manufacturer/${manufacturer.companyName}`}
               >
                 <div className=' manufacturer  '>
-                  <h3> {manufacturer.name} </h3>
+                  <h3> {manufacturer.companyName} </h3>
                   <h5>
                     <strong>Address</strong>: {manufacturer.address}
                   </h5>
@@ -63,10 +63,10 @@ const Manufacturers = ({ manufacturers }) => {
             <div key={manufacturer._id} className='col s12 m6 l4'>
               <NavLink
                 className='black-text manufacturer-container'
-                to={`/manufacturer/${manufacturer.name}`}
+                to={`/manufacturer/${manufacturer.companyName}`}
               >
                 <div className=' manufacturer  '>
-                  <h3> {manufacturer.name} </h3>
+                  <h3> {manufacturer.companyName} </h3>
                   <h5>
                     <strong>Address</strong>: {manufacturer.address}
                   </h5>

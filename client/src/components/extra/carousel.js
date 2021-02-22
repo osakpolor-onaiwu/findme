@@ -1,19 +1,30 @@
-import React, { useEffect } from 'react';
-import SearchForm from '../extra/search';
+import React from 'react';
+import OwlCarousel from 'react-owl-carousel';
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+import 'owl.carousel/dist/assets/owl.theme.default.min.css';
 
-export default function Carousels() {
+export default function Carousel() {
   return (
-    <main id='top-banner'>
-      <div className='slides white-text'>
-        <img src='./hero.png' alt='topbanner' />
-        <div className='search'>
-          <SearchForm />
-        </div>
-
-        <h6 className='white-text'>
-          We help you get your desired service to your doorstep
-        </h6>
-      </div>
+    <main className='carousel'>
+      <section className='right-side col s12  l8'>
+        <OwlCarousel
+          items='1'
+          className='owl-theme'
+          nav
+          dots
+          autoPlay={true}
+          autoplaySpeed={5000}
+          animateIn={true}
+          autoplayHoverPause={true}
+          loop
+        >
+          <img src='./sit.jpg' alt='abc' />
+          <img src='./abc.jpg' alt='abc' />
+        </OwlCarousel>
+      </section>
+      <section className='left-side col l4 hide-on-med-and-down'>
+        <img src='./abc.jpg' alt='abc' />
+      </section>
     </main>
   );
 }

@@ -28,7 +28,7 @@ export const SearchForm = ({ manufacturers }) => {
           })
           .join();
 
-        const Name = manufacturer.name;
+        const Name = manufacturer.companyName;
 
         return Name.match(searchValue);
       });
@@ -38,9 +38,10 @@ export const SearchForm = ({ manufacturers }) => {
           return (
             <NavLink
               className='black-text'
-              to={`/manufacturer/${manufacturer.name}`}
+              key={manufacturer._id}
+              to={`/manufacturer/${manufacturer.companyName}`}
             >
-              <li key={manufacturer._id}>{manufacturer.name}</li>
+              <li>{manufacturer.companyName}</li>
             </NavLink>
           );
         })
@@ -64,7 +65,7 @@ export const SearchForm = ({ manufacturers }) => {
           required={true}
           placeholder='Search'
         />
-        <p className=' result-container black-text'>{result()}</p>
+        <div className=' result-container black-text'>{result()}</div>
       </form>
     </div>
   );

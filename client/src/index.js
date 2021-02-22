@@ -16,6 +16,11 @@ const store = createStore(
   compose(applyMiddleware(thunk.withExtraArgument()), composeWithDevTools()),
 );
 
+// const store = createStore(
+//   RootReducer,
+//   applyMiddleware(thunk.withExtraArgument()),
+// );
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

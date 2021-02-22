@@ -12,7 +12,6 @@ var storage = multer.diskStorage({
   },
   //sets that the file should be stored with its extension name
   filename: function (req, file, callback) {
-    console.log(file);
     callback(
       null,
       file.fieldname + '-' + Date.now() + path.extname(file.originalname),
@@ -35,8 +34,6 @@ const upload = multer({
   },
   fileFilter: fileFilter,
 });
-
-const Category = require('../models/category');
 
 router.post('/', upload.single('image'), controller.create);
 

@@ -1,21 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Carousels from '../extra/carousel';
+import Banner from '../extra/banner';
 import Categories from '../extra/categories';
-
 import HorizontalScroll from '../extra/horizontalscroll';
+import Carousel from '../extra/carousel';
 
 export class Home extends Component {
   render() {
     const { manufacturers } = this.props;
     return (
       <main>
-        <section className='row carousel-section'>
-          <Carousels />
+        <section className='row banner-section'>
+          <Banner />
         </section>
-        <section className='row'>
+        <section className='row scroll-section'>
           <HorizontalScroll />
         </section>
+
+        <section className='row carousel-section'>
+          <Carousel />
+        </section>
+
         <section className='row'>
           <div className='col  s12'>
             <Categories />

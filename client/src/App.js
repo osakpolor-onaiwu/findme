@@ -26,8 +26,7 @@ class App extends React.Component {
     this.props.LoginAction(userDetails);
     this.props.ManufacturersAction();
     // this.props.NewsAction();
-
-    // this.props.GetSample();
+    this.props.GetSample();
   }
 
   render() {

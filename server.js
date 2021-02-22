@@ -1,6 +1,7 @@
 const express = require('express');
 const config = require('config');
 const mongoose = require('mongoose');
+
 //init express
 const app = express();
 
@@ -13,16 +14,17 @@ const User = require('./routers/userApi');
 const Auth = require('./routers/auth');
 const ContactManufacturer = require('./routers/contact_manufacturer');
 
-//allow Post request from client
 //helps parses the data to json
+
 app.use(express.json());
 
 //for online database
-// const url = config.get("mongoURI");
+// const url = config.get('mongoURI');
 
 //connects the db to mongodb
 //localdatabase
 const url = 'mongodb://127.0.0.1:27017/findme';
+
 //connects the db to mongodb
 mongoose.connect(url, {
   useNewUrlParser: true,
@@ -38,19 +40,22 @@ db.once('open', () => {
 db.on('error', (err) => {
   console.log('connection error', err);
 });
+
 //this makes our uploads and samples folder public
 app.use('/uploads', express.static('uploads'));
 app.use('/samples', express.static('samples'));
 
-//this means any request to /foodblog/customers should use
-//the route in CustomerApi file
+//imports the adminbro in admin panel
+const AdminRouter = require('./admin/adminbro');
 
+//our routes
 app.use('/categories', Categories);
 app.use('/manufacturers', Manufacturers);
 app.use('/users', User);
 app.use('/auth', Auth);
 app.use('/samples', Sample);
 app.use('/contactManufacturer', ContactManufacturer);
+app.use('/admin', AdminRouter);
 
 const PORT = process.env.PORT || 5000;
 

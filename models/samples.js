@@ -4,8 +4,8 @@ const Schema = mongoose.Schema;
 module.exports = mongoose.model(
   'Samples',
   Schema({
-    image: { type: String },
-    description: { type: String },
+    name: { type: String, required: true },
+    image: { type: String, required: true },
     manufacturer: { type: Schema.Types.ObjectId, ref: 'Manufacturer' },
   }),
 );

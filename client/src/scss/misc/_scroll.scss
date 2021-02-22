@@ -1,0 +1,46 @@
+@media screen and (min-width:601px){
+.menu-item {
+  padding: 0 0px;
+  margin: 5px 2px;
+  user-select: none;
+  width: 180px;
+}
+
+img.scroll-image {
+  width: 170px;
+  height: 180px;
+}
+
+.scroll-text{
+  font-size: 16px;
+}
+
+.scroll-menu-arrow {
+  padding: 20px;
+  cursor: pointer;
+}
+}
+
+
+
+@media screen and (max-width:600px){
+.menu-item {
+  padding: 0 0px;
+  margin: 5px 2px;
+  user-select: none;
+  width: 100px;
+}
+
+img.scroll-image {
+  width: 100px;
+  height: 110px;
+}
+
+.scroll-text {
+  font-size: 12px;
+}
+.scroll-menu-arrow {
+  padding: 5px;
+  cursor: pointer;
+}
+}

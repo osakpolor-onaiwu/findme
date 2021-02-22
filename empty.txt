@@ -1,0 +1,49 @@
+const express = require('express');
+const router = express.Router();
+const SampleController = require('../controllers/sampleController');
+const Samples = require('../models/samples');
+const fs = require('fs');
+
+router.post('/', (req, res, next) => {
+  const formidable = require('formidable');
+  //parse a file upload
+  var form = new formidable.IncomingForm();
+  form.uploadDir = './samples';
+  form.keepExtensions = true;
+  form.maxFieldsSize = 1024 * 1024 * 2;
+  form.maxFileSize = 1024 * 1024 * 1;
+
+  form.parse(req, (err, fields, files) => {
+    const { description, manufacturer } = fields;
+
+    if (err) {
+      res.json({
+        status: 'failed',
+        message: err,
+      });
+    }
+    const newSample = new Samples({
+      image: files.image.path.split('\\')[1],
+      description,
+      manufacturer,
+    });
+
+    console.log(files);
+    newSample
+      .save()
+      .then((sample) => res.status(200).json(sample))
+      .catch((err) =>
+        res.status(400).json({
+          message: err,
+        }),
+      );
+  });
+});
+
+router.get('/', SampleController.read);
+
+router.put('/:id', SampleController.update);
+
+router.delete('/:id', SampleController.delete);
+
+module.exports = router;
