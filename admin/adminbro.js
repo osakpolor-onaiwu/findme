@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const category = require('../models/category');
 const manufacturer = require('../models/manufacturer');
 const samples = require('../models/samples');
+const faq = require('../models/FAQ')
 
 AdminBro.registerAdapter(AdminBroMongoose);
 
@@ -28,6 +29,15 @@ const adminBro = new AdminBro({
 
     {
       resource: manufacturer,
+      options: {
+        parent: {
+          name: 'Admin Content',
+        },
+      },
+    },
+
+    {
+      resource: faq,
       options: {
         parent: {
           name: 'Admin Content',

@@ -13,6 +13,7 @@ const Sample = require('./routers/samples');
 const User = require('./routers/userApi');
 const Auth = require('./routers/auth');
 const ContactManufacturer = require('./routers/contact_manufacturer');
+const faq = require('./routers/faq')
 
 //helps parses the data to json
 
@@ -55,6 +56,7 @@ app.use('/users', User);
 app.use('/auth', Auth);
 app.use('/samples', Sample);
 app.use('/contactManufacturer', ContactManufacturer);
+app.use('/faq',faq)
 app.use('/admin', AdminRouter);
 
 const PORT = process.env.PORT || 5000;
