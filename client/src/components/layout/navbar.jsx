@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import M from "materialize-css";
-import { AlignJustify, ArrowDown } from "react-feather";
+import { AlignJustify } from "react-feather";
 import { Link } from "react-router-dom";
 import SignedInLink from "../auth/signedInLink";
 import SignedOutLink from "../auth/signedoutLInk";

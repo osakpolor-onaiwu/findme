@@ -8,7 +8,7 @@ const CategoryGet = () => {
         console.log(response);
         dispatch({
           type: 'GET_CATEGORY',
-          response: response.data,
+          response: response.data
         });
       })
       .catch((err) => {

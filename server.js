@@ -19,7 +19,7 @@ const faq = require('./routers/faq')
 
 app.use(express.json());
 
-//for online database
+// for online database
 // const url = config.get('mongoURI');
 
 //connects the db to mongodb

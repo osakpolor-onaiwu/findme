@@ -73,4 +73,10 @@ router.post('/', (req, res) => {
   });
 });
 
+router.get('/',(req,res,next)=>{
+  User.find()
+  .then((result)=>res.status(200).json(result))
+  .catch((err)=>res.status(400).json(err))
+})
+
 module.exports = router;
