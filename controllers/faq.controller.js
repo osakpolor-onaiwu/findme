@@ -1,10 +1,21 @@
 const faq_model = require('../models/FAQ')
+const validatorSpec = require('../utils/specvalidator')
+const joi = require('joi')
 
 
 const faqController = {
-  create(req, res) {
-
+  create(req, res) {              
     const {question,answer} =req.body
+    const data={question,answer}
+    
+    const validate = joi.object({
+      question: joi.string().required(),
+      answer: joi.string().required()
+    })
+
+    validatorSpec(validate,data)
+
+   
     const newFaq = new faq_model({
       question,
       answer
