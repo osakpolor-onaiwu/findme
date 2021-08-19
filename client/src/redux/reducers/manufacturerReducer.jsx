@@ -1,39 +1,35 @@
 const initialState = {
-    manufacturers: [],
-    samples: [],
+  manufacturers: [],
+  samples: [],
 };
 
-const  ManufacturersReducer=(state = initialState, action) => {
-    switch (action.type) {
-        case "MANUFACTURERS_GET":
-            console.log(action.payload)
-            return {
-                ...state,
-                manufacturers: action.payload
-            };
+const ManufacturersReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case "MANUFACTURERS_GET":
+      return {
+        ...state,
+        manufacturers: action.payload,
+      };
 
-        case "MANUFACTURERS_GET_ERR":
-            console.log(action.err)
-            return {
-                ...state,
-            };
+    case "MANUFACTURERS_GET_ERR":
+      return {
+        ...state,
+      };
 
-        case "GET_SAMPLE":
-            console.log(action.payload)
-            return {
-                ...state,
-                samples: action.payload
-            };
+    case "GET_SAMPLE":
+      return {
+        ...state,
+        samples: action.payload,
+      };
 
-        case "GET_SAMPLE_ERR":
-            console.log(action.err)
-            return {
-                ...state
-            };
+    case "GET_SAMPLE_ERR":
+      return {
+        ...state,
+      };
 
-        default:
-            return state;
-    }
+    default:
+      return state;
+  }
 };
 
-export default ManufacturersReducer
+export default ManufacturersReducer;

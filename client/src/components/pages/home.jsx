@@ -1,36 +1,30 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import Banner from '../extra/banner';
-import Categories from '../extra/categories';
-import HorizontalScroll from '../extra/horizontalscroll';
-import Carousel from '../extra/carousel';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Banner from "../extra/banner";
+import Samples from "../extra/samples";
+import HorizontalScroll from "../extra/horizontalscroll";
+import About from "../extra/home-about";
+import { NavLink } from "react-router-dom";
 
 export class Home extends Component {
   render() {
-    const { manufacturers } = this.props;
     return (
-      <main>
-        <section className='row banner-section'>
+      <main id="home">
+        <section className="row banner-section">
           <Banner />
         </section>
-        <section className='row scroll-section'>
+        <section className="row center contain scroll-section">
+          <h6 className="home-category-related-text">TOP CATEGORIES</h6>
           <HorizontalScroll />
         </section>
 
-        <section className='row carousel-section'>
-          <Carousel />
+        <section className="row about-section">
+          <About />
         </section>
 
-        <section className='row'>
-          <div className='col  s12'>
-            <Categories />
-          </div>
-        </section>
-        <section className='row bottom-row'>
-          <div className='col l12 m12 s12 '>
-            <h5>
-              Service Providers: {manufacturers.length} || Clients:{}
-            </h5>
+        <section className="row sample-section">
+          <div className="col  s12">
+            <Samples />
           </div>
         </section>
       </main>

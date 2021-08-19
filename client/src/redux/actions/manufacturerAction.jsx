@@ -14,7 +14,7 @@ const ManufacturerAction = (payload) => {
       .then((res) => {
         dispatch({
           type: 'MANUFACTURERS_GET',
-          payload: res.data,
+          payload: res.data.data,
         });
       })
       .catch((err) => {

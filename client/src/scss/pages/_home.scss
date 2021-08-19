@@ -1,70 +1,67 @@
-@media screen and (min-width: 801px) {
-    section.carousel-section {
-        position: relative;
-        background-color: white;
+@media screen and (min-width: 922px) {
+  section.about-section {
+    background-color: white;
+    height: 400px;
+    margin-top: 50px;
+    button {
+      @include buttonA(150px);
     }
+  }
 
-    section.bottom-row {
-        height: 200px;
-        margin-bottom: 2%;
-
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            flex-direction: column;
-            h4 {
-                margin-bottom: -15px;
-            }
-           
-        }
+  section.scroll-section {
+    .scroll-button {
+      margin-top: 50px !important;
+      @include buttonA(150px);
     }
+  }
+  section.sample-section {
+    margin-top: 50px;
+    padding-top: 5px;
+    padding-bottom: 30px;
+    background: fixed rgb(240, 240, 240);
+  }
 }
 
-@media screen and (max-width: 800px) and (min-width: 641px) {
-    section.carousel-section {
-        position: relative;
-        background-color: white;
+@media screen and (max-width: 921px) and (min-width: 601px) {
+  section.scroll-section {
+    .scroll-button {
+      margin-top: 50px;
+      @include buttonA(150px);
     }
-
-    section.bottom-row {
-        height: 200px;
-        margin-bottom: 3%;
-
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            h4 {
-                margin-bottom: -15px;
-            }
-           
-        }
+  }
+  section.about-section {
+    background-color: white;
+    height: 250px;
+    button {
+      @include buttonA(150px);
     }
+  }
+
+  section.sample-section {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background: fixed rgb(240, 240, 240);
+  }
 }
 
-@media screen and (max-width: 640px) {
-    section.carousel-section {
-        position: relative;
-        background-color: white;
+@media screen and (max-width: 600px) {
+  section.scroll-section {
+    .scroll-button {
+      margin-top: 50px !important;
+      @include buttonA(150px);
     }
+  }
 
-    section.bottom-row {
-        height: 200px;
-        margin: 1% 0;
-
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            h4 {
-                margin-bottom: -15px;
-                font-size: 20px;
-            }
-          
-        }
+  section.about-section {
+    background-color: white;
+    height: 250px;
+    button {
+      @include buttonA(150px);
     }
+  }
+  section.sample-section {
+    padding-top: 5px;
+    padding-bottom: 20px;
+    background: fixed rgb(240, 240, 240);
+  }
 }

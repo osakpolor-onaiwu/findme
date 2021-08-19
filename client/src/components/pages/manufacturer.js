@@ -1,12 +1,12 @@
-import React, { Component, useState } from 'react';
-import { connect } from 'react-redux';
-import { ArrowRight, X, Compass, Mail, Phone } from 'react-feather';
-import SearchForm from '../extra/search';
-import { NavLink } from 'react-router-dom';
+import React, { Component, useState } from "react";
+import { connect } from "react-redux";
+import { ArrowRight, X, Compass, Mail, Phone } from "react-feather";
+import SearchForm from "../extra/search";
+import { NavLink } from "react-router-dom";
 
 const Manufacturers = ({ manufacturers }) => {
   const iniState = {
-    filter: '',
+    filter: "",
   };
 
   const [state, setState] = useState(iniState);
@@ -19,34 +19,28 @@ const Manufacturers = ({ manufacturers }) => {
   };
 
   const result = () => {
-    if (state.filter == '') {
+    if (state.filter == "") {
       const All = manufacturers.length ? (
         manufacturers.map((manufacturer) => {
           return (
-            <div key={manufacturer._id} className='col s12 m6 l4'>
+            <div key={manufacturer._id} className="col s12 m6 l4">
               <NavLink
-                className='black-text manufacturer-container'
+                className="black-text manufacturer-container"
                 to={`/manufacturer/${manufacturer.companyName}`}
               >
-                <div className=' manufacturer  '>
+                <div className=" manufacturer  ">
                   <h3> {manufacturer.companyName} </h3>
                   <h5>
                     <strong>Address</strong>: {manufacturer.address}
                   </h5>
-                  <h5>
-                    <strong>state</strong>: {manufacturer.state}
-                  </h5>
-                  <h5>
-                    <strong>city</strong>: {manufacturer.city}
-                  </h5>
-                  <h6 className='center'>Contact this Manufacturer</h6>
+                  <h6 className="center">Contact me</h6>
                 </div>
               </NavLink>
             </div>
           );
         })
       ) : (
-        <div className='contain'>No manufacturers in this category yet</div>
+        <div className="contain">No manufacturers in this category yet</div>
       );
 
       return All;
@@ -60,12 +54,12 @@ const Manufacturers = ({ manufacturers }) => {
       const SearchResult = Search ? (
         Search.map((manufacturer) => {
           return (
-            <div key={manufacturer._id} className='col s12 m6 l4'>
+            <div key={manufacturer._id} className="col s12 m6 l4">
               <NavLink
-                className='black-text manufacturer-container'
+                className="black-text manufacturer-container"
                 to={`/manufacturer/${manufacturer.companyName}`}
               >
-                <div className=' manufacturer  '>
+                <div className=" manufacturer  ">
                   <h3> {manufacturer.companyName} </h3>
                   <h5>
                     <strong>Address</strong>: {manufacturer.address}
@@ -76,14 +70,14 @@ const Manufacturers = ({ manufacturers }) => {
                   <h5>
                     <strong>city</strong>: {manufacturer.city}
                   </h5>
-                  <h6 className='center'>Contact this Manufacturer</h6>
+                  <h6 className="center">Contact this Manufacturer</h6>
                 </div>
               </NavLink>
             </div>
           );
         })
       ) : (
-        <li className='black-text'>No Record Matches {state.search}</li>
+        <li className="black-text">No Record Matches {state.search}</li>
       );
 
       return SearchResult;
@@ -91,24 +85,21 @@ const Manufacturers = ({ manufacturers }) => {
   };
 
   return (
-    <main>
-      <section className='row contain'>
-        <SearchForm />
-      </section>
-      <section className='row contain manufactuer-form'>
-        <form className='browser-default'>
+    <main id="manufacturers">
+      <section className="row contain ">
+        <form className="browser-default col s12 m12 l7">
           <input
-            name='filter'
+            name="filter"
             onChange={handleChange}
-            className='browser-default black-text validate'
-            type='text'
+            className="browser-default black-text validate manufacturer-search"
+            type="text"
             required={true}
-            placeholder='Search by city'
+            placeholder="Search by Manufacturer city"
           />
         </form>
       </section>
-      <section className='row contain'>{result()}</section>
-      <section className='row bottom-row'></section>
+      <section className="row contain">{result()}</section>
+      <section className="row bottom-row"></section>
     </main>
   );
 };

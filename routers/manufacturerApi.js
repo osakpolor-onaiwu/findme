@@ -1,16 +1,16 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const manufacturerController = require('../controllers/manufacturerController');
+const manufacturer = require("../handlers/manufactuer/index");
 
-router.post('/', manufacturerController.create);
+router.post("/", manufacturer.create);
 
 //gets all
-router.get('/', manufacturerController.readAll);
+router.get("/", manufacturer.read);
 
 //update
-router.put('/:id', manufacturerController.update);
+router.put("/:id", manufacturer.update);
 
 //delete
-router.delete('/:id', manufacturerController.delete);
+router.delete("/:id", manufacturer.deletes);
 
 module.exports = router;

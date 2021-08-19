@@ -1,12 +1,14 @@
-const AdminBro = require('admin-bro');
-const AdminBroExpress = require('admin-bro-expressjs');
-const AdminBroMongoose = require('admin-bro-mongoose');
+const AdminBro = require("admin-bro");
+const AdminBroExpress = require("admin-bro-expressjs");
+const AdminBroMongoose = require("admin-bro-mongoose");
 
-const mongoose = require('mongoose');
-const category = require('../models/category');
-const manufacturer = require('../models/manufacturer');
-const samples = require('../models/samples');
-const faq = require('../models/FAQ')
+const mongoose = require("mongoose");
+const category = require("../models/category");
+const manufacturer = require("../models/manufacturer");
+const samples = require("../models/samples");
+const faq = require("../models/FAQ");
+const feedback = require("../models/feedback");
+require("dotenv").config();
 
 AdminBro.registerAdapter(AdminBroMongoose);
 
@@ -22,7 +24,15 @@ const adminBro = new AdminBro({
       resource: category,
       options: {
         parent: {
-          name: 'Admin Content',
+          name: "Admin Content",
+        },
+      },
+    },
+    {
+      resource: feedback,
+      options: {
+        parent: {
+          name: "Admin Content",
         },
       },
     },
@@ -31,7 +41,7 @@ const adminBro = new AdminBro({
       resource: manufacturer,
       options: {
         parent: {
-          name: 'Admin Content',
+          name: "Admin Content",
         },
       },
     },
@@ -40,7 +50,7 @@ const adminBro = new AdminBro({
       resource: faq,
       options: {
         parent: {
-          name: 'Admin Content',
+          name: "Admin Content",
         },
       },
     },
@@ -49,30 +59,30 @@ const adminBro = new AdminBro({
       resource: samples,
       options: {
         parent: {
-          name: 'Admin Content',
+          name: "Admin Content",
         },
       },
     },
   ],
-  rootPath: '/admin',
+  rootPath: "/admin",
 
   //this is for handling the logo design and add company name
   branding: {
-    logo: '../client/public/logo1.jpg',
-    companyName: 'Findme',
+    logo: "../client/public/logo1.jpg",
+    companyName: "Findme",
   },
 });
 
 const ADMIN = {
-  email: process.env.ADMIN_EMAIL || 'onaiwuosakpolor@gmail.com',
-  password: process.env.ADMIN_PASSWORD || 'daniel1995',
+  email: process.env.ADMIN_EMAIL || "user@gmail.com",
+  password: process.env.ADMIN_PASSWORD || "user1995",
 };
 
 const router = AdminBroExpress.buildAuthenticatedRouter(adminBro, {
-  cookieName: process.env.ADMIN_COOKIE_NAME || 'admin-bro',
+  cookieName: process.env.ADMIN_COOKIE_NAME || "admin-bro",
   cookiePassword:
     process.env.ADMIN_COOKIE_PASS ||
-    'supersecret-and-long-password-for-a-cookie-in-the-browser',
+    "supersecret-and-long-password-for-a-cookie-in-the-browser",
   authenticate: async (email, password) => {
     if (email === ADMIN.email && password === ADMIN.password) {
       return ADMIN;

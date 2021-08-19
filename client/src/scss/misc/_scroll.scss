@@ -1,46 +1,53 @@
-@media screen and (min-width:601px){
-.menu-item {
-  padding: 0 0px;
-  margin: 5px 2px;
-  user-select: none;
-  width: 180px;
+@media screen and (min-width: 922px) {
+  img.scroll-image {
+    width: 170px;
+    height: 180px;
+  }
+
+  .scroll-text {
+    font-size: 15px;
+    text-decoration: none;
+    color: rgba(22, 21, 21, 0.829);
+    font-weight: 500px;
+  }
+
+  .scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+  }
 }
 
-img.scroll-image {
-  width: 170px;
-  height: 180px;
+@media screen and (min-width: 601px) and (max-width: 921px) {
+  img.scroll-image {
+    width: 170px;
+    height: 180px;
+  }
+
+  .scroll-text {
+    font-size: 15px;
+    color: rgba(22, 21, 21, 0.829);
+    font-weight: 500px;
+  }
+
+  .scroll-menu-arrow {
+    padding: 20px;
+    cursor: pointer;
+  }
 }
 
-.scroll-text{
-  font-size: 16px;
-}
+@media screen and (max-width: 600px) {
+  img.scroll-image {
+    width: 110px;
+    height: 100px;
+  }
 
-.scroll-menu-arrow {
-  padding: 20px;
-  cursor: pointer;
-}
-}
-
-
-
-@media screen and (max-width:600px){
-.menu-item {
-  padding: 0 0px;
-  margin: 5px 2px;
-  user-select: none;
-  width: 100px;
-}
-
-img.scroll-image {
-  width: 100px;
-  height: 110px;
-}
-
-.scroll-text {
-  font-size: 12px;
-}
-.scroll-menu-arrow {
-  padding: 5px;
-  cursor: pointer;
-}
+  .scroll-text {
+    font-size: 12px;
+    color: rgba(22, 21, 21, 0.829);
+    font-weight: 500px;
+  }
+  .scroll-menu-arrow {
+    padding: 5px;
+    cursor: pointer;
+  }
 }

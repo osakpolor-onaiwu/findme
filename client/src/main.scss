@@ -10,17 +10,35 @@
 @import "./scss/pages/home";
 @import "./scss/pages/manufacturer";
 @import "./scss/misc/scroll";
-@import "./scss/misc/carousel";
+@import "./scss/misc/home-about";
+@import "./scss/misc/samples.gallary";
+@import "./scss/pages/contact.manufacturer";
+@import "./scss/pages/about";
+@import "./scss/pages/contact";
 
 body,
 html {
-    font-family: 'Roboto',
-        sans-serif;
-    ;
-    box-sizing: border-box;
-    overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  color: $text-grey;
 }
 
-.contain {
-    margin: 1% 1%;
+@media screen and (min-width: 922px) {
+  .contain {
+    margin: 1% 8% !important;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 921px) {
+  .contain {
+    margin: 1% 5% !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .contain {
+    margin: 0% 2% !important;
+  }
 }

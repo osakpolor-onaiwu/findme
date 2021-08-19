@@ -1,5 +1,5 @@
-@media only screen and (min-width: 921px){
-div.ContactForm {
+@media only screen and (min-width: 922px) {
+  div.ContactForm {
     width: 100%;
     margin: 2% 2%;
     padding: 2% 3%;
@@ -7,20 +7,20 @@ div.ContactForm {
     justify-content: center;
     align-items: center;
 
-    >form {
-        padding: 2% 2%;
-        width: 55%;
-        box-shadow: 0 2px 5px black;
+    > form {
+      padding: 2% 2%;
+      width: 80%;
+      box-shadow: 0 2px 5px black;
     }
-}
+  }
 
-.button {
+  .button {
     @include buttonA(180px);
-}
+  }
 }
 
-@media only screen and (min-width: 501px) and (max-width: 920px) {
-div.ContactForm {
+@media only screen and (min-width: 601px) and (max-width: 921px) {
+  div.ContactForm {
     width: 100%;
     margin: 2% 2%;
     padding: 2% 3%;
@@ -28,20 +28,20 @@ div.ContactForm {
     justify-content: center;
     align-items: center;
 
-    >form {
-        padding: 2% 2%;
-        width: 85%;
-        box-shadow: 0 2px 5px black;
+    > form {
+      padding: 2% 2%;
+      width: 85%;
+      box-shadow: 0 2px 5px black;
     }
-}
+  }
 
-.button {
+  .button {
     @include buttonA(180px);
-}
+  }
 }
 
-@media only screen and (max-width: 500px){
-div.ContactForm {
+@media only screen and (max-width: 600px) {
+  div.ContactForm {
     width: 100%;
     margin: 2% 2%;
     padding: 2% 3%;
@@ -49,14 +49,14 @@ div.ContactForm {
     justify-content: center;
     align-items: center;
 
-    >form {
-        padding: 2% 2%;
-        width: 100%;
-        box-shadow: 0 2px 5px black;
+    > form {
+      padding: 2% 2%;
+      width: 100%;
+      box-shadow: 0 2px 5px black;
     }
-}
+  }
 
-.button {
+  .button {
     @include buttonA(180px);
-}
+  }
 }

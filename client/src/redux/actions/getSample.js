@@ -1,23 +1,23 @@
-import axios from 'axios';
+import axios from "axios";
 
 const GetSample = (payload) => {
   const config = {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   };
   return (dispatch) => {
     axios
-      .get('/samples', config)
+      .get("/samples", config)
       .then((res) => {
         dispatch({
-          type: 'GET_SAMPLE',
-          payload: res.data,
+          type: "GET_SAMPLE",
+          payload: res.data.data,
         });
       })
       .catch((err) => {
         dispatch({
-          type: 'GET_SAMPLE_ERR',
+          type: "GET_SAMPLE_ERR",
           err,
         });
       });

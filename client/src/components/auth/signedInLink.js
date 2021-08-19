@@ -1,8 +1,8 @@
-import React, { Component, useState, useEffect } from 'react';
-import { Power } from 'react-feather';
-import { connect } from 'react-redux';
-import { NavLink, Link, Redirect } from 'react-router-dom';
-import SignOut from '../../redux/actions/logoutAction';
+import React, { Component, useState, useEffect } from "react";
+import { Power } from "react-feather";
+import { connect } from "react-redux";
+import { NavLink, Link, Redirect } from "react-router-dom";
+import SignOut from "../../redux/actions/logoutAction";
 
 const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
   const initialState = {
@@ -21,9 +21,9 @@ const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
     // window.onclick = toggle;
 
     if (state.show === false) {
-      document.getElementById('myDropdown-content').className = 'hide';
+      document.getElementById("myDropdown-content").className = "hide";
     } else {
-      document.getElementById('myDropdown-content').className = 'show';
+      document.getElementById("myDropdown-content").className = "show";
     }
   }, [state.show]);
 
@@ -31,7 +31,7 @@ const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
     category.map((item) => {
       return (
         <li key={item._id}>
-          <NavLink className='white-text' to={`/category/${item.name}`}>
+          <NavLink className="white-text" to={`/category/${item.name}`}>
             {item.name}
           </NavLink>
         </li>
@@ -44,49 +44,52 @@ const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
   const signoutRedirect = () => {
     logout();
     if (isAuthenticated === false) {
-      return <Redirect to='/login' />;
+      return <Redirect to="/login" />;
     }
   };
 
   const Links = (
-    <ul id='nav-large' className=' hide-on-med-and-down'>
+    <ul id="nav-large" className=" hide-on-med-and-down">
+      <h6>Hivesolution</h6>
       <li>
-        <img src='./logo2.jpg' alt='logo' />
-      </li>
-      <li>
-        <Link className='navigation-link' to='/'>
+        <Link className="navigation-link" to="/">
           Home
         </Link>
       </li>
       <li>
-        <Link className='navigation-link' to='/about'>
+        <Link className="navigation-link" to="/about">
           About
         </Link>
       </li>
+      <li>
+        <NavLink className="navigation-link" to="/seller">
+          Sell
+        </NavLink>
+      </li>
 
       {/* <!-- Dropdown  */}
-      <li className='dropdownContainer mydrop-trigger' onClick={toggle}>
-        <a href='#!' className=' navigation-link'>
+      <li className="dropdownContainer mydrop-trigger" onClick={toggle}>
+        <a href="#!" className=" navigation-link">
           Categories
         </a>
-        <ul id='myDropdown-content' className='content'>
+        <ul id="myDropdown-content" className="content">
           {showcategories}
         </ul>
       </li>
+
       <li>
-        <NavLink id='user' className='navigation-link' to='#'>
-          {user ? `${user.name}` : ''}
+        <NavLink id="user" className="navigation-link" to="#">
+          {user ? `${user.name}` : ""}
         </NavLink>
       </li>
       <li>
-        <NavLink className='navigation-link' onClick={signoutRedirect} to='#!'>
-          <Power color='white' size='18' />
+        <NavLink className="navigation-link" onClick={signoutRedirect} to="#!">
           <span>Logout</span>
         </NavLink>
       </li>
     </ul>
   );
-  return <div>{Links}</div>;
+  return <div className="contain">{Links}</div>;
 };
 
 const mapStateToProps = (state) => ({

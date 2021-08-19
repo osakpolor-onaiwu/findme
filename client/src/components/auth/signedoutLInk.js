@@ -1,7 +1,7 @@
-import React, { Component, useState, useEffect } from 'react';
-import { LogIn, UserPlus } from 'react-feather';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import React, { Component, useState, useEffect } from "react";
+import { LogIn, UserPlus } from "react-feather";
+import { connect } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 const SignedOutLink = ({ category }) => {
   const initialState = {
@@ -20,9 +20,9 @@ const SignedOutLink = ({ category }) => {
     // window.onclick = toggle;
 
     if (state.show === false) {
-      document.getElementById('myDropdown-content').className = 'hide';
+      document.getElementById("myDropdown-content").className = "hide";
     } else {
-      document.getElementById('myDropdown-content').className = 'show';
+      document.getElementById("myDropdown-content").className = "show";
     }
   }, [state.show]);
 
@@ -30,9 +30,9 @@ const SignedOutLink = ({ category }) => {
     category.map((item) => {
       return (
         <li key={item._id}>
-          <Link className='navigation-link' to={`/category/${item.name}`}>
+          <NavLink className="navigation-link" to={`/category/${item.name}`}>
             {item.name}
-          </Link>
+          </NavLink>
         </li>
       );
     })
@@ -41,46 +41,50 @@ const SignedOutLink = ({ category }) => {
   );
 
   const Links = (
-    <ul id='nav-large' className=' hide-on-med-and-down'>
+    <ul id="nav-large" className=" hide-on-med-and-down">
+      <h6>Hivesolution</h6>
       <li>
-        <img src='./logo2.jpg' alt='logo' />
-      </li>
-      <li>
-        <Link className='navigation-link' to='/'>
+        <NavLink className="navigation-link" to="/">
           Home
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className='navigation-link' to='/about'>
+        <NavLink className="navigation-link" to="/about">
           About
-        </Link>
+        </NavLink>
+      </li>
+      <li>
+        <NavLink className="navigation-link" to="/seller">
+          Sell
+        </NavLink>
       </li>
 
       {/* <!-- Dropdown  */}
-      <li className='dropdownContainer mydrop-trigger' onClick={toggle}>
-        <a href='#!' className=' navigation-link'>
+      <li className="dropdownContainer mydrop-trigger" onClick={toggle}>
+        <a href="#!" className=" navigation-link">
           Categories
         </a>
-        <ul id='myDropdown-content' className='content'>
+        <ul id="myDropdown-content" className="content">
           {showcategories}
         </ul>
       </li>
+
       <li>
-        <Link className='navigation-link nav-auth-link' to='/login'>
-          <LogIn color='white' size='18' />
+        <NavLink className="navigation-link nav-auth-link" to="/login">
+          {/* <LogIn color="white" size="14" /> */}
           <span> Login </span>
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className='navigation-link nav-auth-link' to='/signUp'>
-          <UserPlus color='white' size='18' />
+        <NavLink className="navigation-link nav-auth-link" to="/signUp">
+          {/* <UserPlus color="white" size="14" /> */}
 
-          <span> SignUp</span>
-        </Link>
+          <span> Join</span>
+        </NavLink>
       </li>
     </ul>
   );
-  return <div>{Links}</div>;
+  return <div className="contain">{Links}</div>;
 };
 
 const mapStateToProps = (state) => ({

@@ -1,8 +1,9 @@
 @mixin buttonA($wide) {
-    width: $wide;
-    height: 40px;
-    margin: 1% 5px;
-    padding: 10px 15px;
-    background-color: $buttonBlue;
-    border: solid white 1px;
+  width: $wide;
+  height: 40px;
+  margin: 1% 0;
+  padding: 10px 15px;
+  color: white !important;
+  background-color: $buttonBlue;
+  border: solid white 1px;
 }

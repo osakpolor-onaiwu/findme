@@ -3,14 +3,16 @@ import CategoryReducer from "./categoryReducer";
 import AuthReducer from "./authReducer";
 import NewsReducer from "./newsReducer";
 import ManufacturersReducer from "./manufacturerReducer";
-import errorReducer from "./errorReducer";
+import ErrorReducer from "./errorReducer";
+import ContactReducer from "./contactReducer";
 
 const RootReducer = combineReducers({
-    auth: AuthReducer,
-    category: CategoryReducer,
-    news: NewsReducer,
-    manufacturers: ManufacturersReducer,
-    error: errorReducer,
+  auth: AuthReducer,
+  category: CategoryReducer,
+  news: NewsReducer,
+  manufacturers: ManufacturersReducer,
+  error: ErrorReducer,
+  contact: ContactReducer,
 });
 
 export default RootReducer;
