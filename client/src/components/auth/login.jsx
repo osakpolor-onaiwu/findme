@@ -6,125 +6,114 @@ import ClearError from "../../redux/actions/clearError";
 import { User } from "react-feather";
 
 class Login extends React.Component {
-    state = {
-        email: "",
-        password: "",
-        msg: null,
-    };
+  state = {
+    email: "",
+    password: "",
+    msg: null,
+  };
 
-    handleChange = (e) => {
-        this.setState({
-            ...this.state,
-            [e.target.name]: e.target.value,
-        });
-    };
+  handleChange = (e) => {
+    this.setState({
+      ...this.state,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { email, password } = this.state;
-        const user = { email, password };
-        this.props.LoginAction(user);
-    };
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { email, password } = this.state;
+    const user = { email, password };
+    this.props.LoginAction(user);
+  };
 
-    componentDidUpdate(prevProps) {
-        const { error } = this.props;
-        //checks if the error changes
-        if (error !== prevProps.error) {
-            //checks the id of the error from signup action
-            if (error.id === "LOGIN_FAIL") {
-                this.setState({ msg: error.msg.msg });
-            }
-        } else {
-            this.props.ClearError();
-        }
+  componentDidUpdate(prevProps) {
+    const { error } = this.props;
+    //checks if the error changes
+    if (error !== prevProps.error) {
+      //checks the id of the error from signup action
+      if (error.id === "LOGIN_FAIL") {
+        this.setState({ msg: error.msg.msg });
+      }
+    } else {
+      this.props.ClearError();
+    }
+  }
+
+  render() {
+    const { isAuthenticated } = this.props;
+    if (isAuthenticated) {
+      return <Redirect to="/" />;
     }
 
-    render() {
-        const { isAuthenticated } = this.props;
-        if (isAuthenticated) {
-            return <Redirect to="/" />;
-        }
+    return (
+      <main className="auth">
+        <form className=" auth-form" onSubmit={this.handleSubmit}>
+          <User color="black" className="center" size="35" />
 
-        return (
-            <main>
-                <div className="authform">
-                    <form className="black-text" onSubmit={this.handleSubmit}>
+          <h4 className="center">Sign In</h4>
 
-                        <User color="black" size="35" />
+          <label className="" htmlFor="email">
+            Email
+          </label>
 
-                        <h4 className="center">Sign In</h4>
+          <input
+            className=" browser-default"
+            required={true}
+            type="email"
+            name="email"
+            onChange={this.handleChange}
+            placeholder="Email"
+          />
 
-                        <p className="center">
-                            Don't have an Account?{" "}
-                            <NavLink className="blue-text" to="/signUp">
-                                SignUp
-                            </NavLink>
-                        </p>
+          <label className="" htmlFor="password">
+            Password
+          </label>
 
-                        <label className="black-text" htmlFor="email">
-                            Email
-                        </label>
+          <input
+            className=" browser-default"
+            required={true}
+            type="password"
+            placeholder="password"
+            name="password"
+            id="password"
+            onChange={this.handleChange}
+          />
 
-                        <input
-                            className="black-text"
-                            required={true}
-                            type="email"
-                            name="email"
-                            onChange={this.handleChange}
-                            placeholder="Enter your email"
-                        />
+          <button className="" type="submit" name="action">
+            Submit
+          </button>
+          <p>
+            {this.state.msg ? <span className="">{this.state.msg}</span> : null}
+          </p>
 
-                        <label className="black-text" htmlFor="password">
-                            Password
-                        </label>
-
-                        <input
-                            className="black-text"
-                            required={true}
-                            type="password"
-                            placeholder="Enter your password"
-                            name="password"
-                            id="password"
-                            onChange={this.handleChange}
-                        />
-                        <p>
-                            {this.state.msg ? (
-                                <span className="black-text">
-                                    {this.state.msg}
-                                </span>
-                            ) : null}
-                        </p>
-
-                        <button
-                            className="white-text"
-                            type="submit"
-                            name="action">
-                            Submit
-                        </button>
-
-                    </form>
-                </div>
-            </main>
-        );
-    }
+          <p className="center">
+            Don't have an Account?{" "}
+            <NavLink className="blue-text" to="/signUp">
+              SignUp
+            </NavLink>
+          </p>
+        </form>
+      </main>
+    );
+  }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        isAuthenticated: state.auth.isAuthenticated,
-        error: state.error,
-    };
+  return {
+    isAuthenticated: state.auth.isAuthenticated,
+    error: state.error,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
-    return {
-        LoginAction: (userDetails) => {
-            dispatch(LoginAction(userDetails));
-        },
-        ClearError: () => {
-            dispatch(ClearError());
-        },
-    };
+  return {
+    LoginAction: (userDetails) => {
+      dispatch(LoginAction(userDetails));
+    },
+    ClearError: () => {
+      dispatch(ClearError());
+    },
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

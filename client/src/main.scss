@@ -12,10 +12,12 @@
 @import "./scss/misc/scroll";
 @import "./scss/misc/home-about";
 @import "./scss/misc/samples.gallary";
-@import "./scss/pages/contact.manufacturer";
+@import "./scss/pages/seller";
 @import "./scss/pages/about";
 @import "./scss/pages/contact";
-
+@import "./scss/pages/contact.manufacturer";
+@import "./scss/pages/faq";
+@import "./scss/pages/log";
 body,
 html {
   font-family: "Poppins", sans-serif;
@@ -23,6 +25,7 @@ html {
   box-sizing: border-box;
   overflow-x: hidden;
   color: $text-grey;
+  position: relative;
 }
 
 @media screen and (min-width: 922px) {

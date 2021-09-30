@@ -12,6 +12,8 @@ const Auth = require("./routers/auth");
 const ContactManufacturer = require("./routers/contact_manufacturer");
 const Faq = require("./routers/faq");
 const Feedback = require("./routers/feedback");
+const Seller = require("./routers/seller");
+const logs = require("./routers/logs");
 
 //imports the adminbro in admin panel
 const AdminRouter = require("./admin/adminbro");
@@ -21,7 +23,7 @@ const app = express();
 //helps parses the data to json
 app.use(express.json());
 
-//our routes
+//our route
 app.use("/categories", Categories);
 app.use("/manufacturers", Manufacturers);
 app.use("/users", User);
@@ -30,7 +32,9 @@ app.use("/samples", Sample);
 app.use("/feedback", Feedback);
 app.use("/contactManufacturer", ContactManufacturer);
 app.use("/faq", Faq);
+app.use("/seller", Seller);
 app.use("/admin", AdminRouter);
+app.use("/logs", logs);
 
 //this makes our uploads and samples folder public
 app.use("/uploads", express.static("uploads"));

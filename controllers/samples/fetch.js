@@ -1,7 +1,7 @@
 const Samples = require("../../models/samples");
 
-const read = (req, res, next) => {
-  Samples.find()
+const fetch = async (req, res, next) => {
+  await Samples.find()
     .populate("manufacturer")
     .then((sample) => {
       //we should change the localhost:5000 to where we host it to
@@ -26,4 +26,4 @@ const read = (req, res, next) => {
     );
 };
 
-module.exports = read;
+module.exports = fetch;

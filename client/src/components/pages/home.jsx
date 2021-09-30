@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Banner from "../extra/banner";
-import Samples from "../extra/samples";
+import Categories from "../extra/categories";
 import HorizontalScroll from "../extra/horizontalscroll";
 import About from "../extra/home-about";
 import { NavLink } from "react-router-dom";
@@ -14,17 +14,23 @@ export class Home extends Component {
           <Banner />
         </section>
         <section className="row center contain scroll-section">
-          <h6 className="home-category-related-text">TOP CATEGORIES</h6>
-          <HorizontalScroll />
+          <h6 className="home-category-related-text">
+            Samples from our service providers
+          </h6>
+          {/* <HorizontalScroll /> */}
         </section>
-
+        {/* <section id="to-categories">
+          <NavLink to="/categories" className="scroll-button">
+            See All
+          </NavLink>
+        </section> */}
         <section className="row about-section">
           <About />
         </section>
 
-        <section className="row sample-section">
+        <section className="row categories-section">
           <div className="col  s12">
-            <Samples />
+            <Categories />
           </div>
         </section>
       </main>

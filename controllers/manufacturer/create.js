@@ -1,7 +1,23 @@
 const manufactuer = require("../../models/manufacturer");
 const categories = require("../../models/category");
+const States = require("./littleDatabase/States");
 const create = async (req, res, next) => {
   try {
+    let stateCase = req.body.state.split("");
+
+    let first_letter = stateCase[0].toUpperCase();
+    let other_letters = stateCase.splice(1, stateCase.length).join("");
+    let newState = `${first_letter}${other_letters}`;
+
+    let stateCheck = States.filter((states) => {
+      return states == newState;
+    });
+
+    if (stateCheck == null || stateCheck.length == 0) {
+      throw new Error("please enter a valid state");
+    }
+
+    req.body.state = newState;
     const {
       fullname,
       companyName,

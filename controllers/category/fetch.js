@@ -1,4 +1,5 @@
 const Category = require("../../models/category");
+const logger = require("../../logger");
 
 const fetch = async (req, res, next) => {
   await Category.find()
@@ -11,13 +12,14 @@ const fetch = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "fetch category error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = fetch;

@@ -22,23 +22,21 @@ export const Contact = ({ contactAction, feedback }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+
     contactAction({
       ...state,
     });
   };
 
   return (
-    <main>
-      <section className="row top-contact-section">
-        <img src="./contact.jpg" alt="contact" />
-      </section>
-
+    <main className="contact">
       <section className="row contact-us">
         <div className="col s12 l6 forms">
           <form onSubmit={handleSubmit}>
-            <h4>Send us a message</h4>
-            <label htmlFor="email">Email</label>
+            <h4 className="white-text">Send us a message</h4>
+            <label htmlFor="email" className="white-text">
+              Email
+            </label>
             <input
               type="email"
               onChange={handleChange}
@@ -46,7 +44,9 @@ export const Contact = ({ contactAction, feedback }) => {
               required={true}
               className="browser-default"
             />
-            <label htmlFor="feedBackType">Reason for Contacting</label>
+            <label htmlFor="feedBackType" className="white-text">
+              Reason for Contacting
+            </label>
             <select
               name="feedBackType"
               onChange={handleChange}
@@ -57,7 +57,9 @@ export const Contact = ({ contactAction, feedback }) => {
               <option value="compliant">Compliant</option>
               <option value="suggestion">Suggestion</option>
             </select>
-            <label htmlFor="feedback">How can we help you?</label>
+            <label htmlFor="feedback" className="white-text">
+              How can we help you?
+            </label>
             <textarea
               name="feedback"
               required={true}
@@ -69,22 +71,26 @@ export const Contact = ({ contactAction, feedback }) => {
           </form>
         </div>
         <div className="col s12 l6 text-address">
-          <h5>
-            <MapPin size="20" color="grey" className="contact-icon" />
+          <h5 className="white-text">
+            <MapPin
+              size="20"
+              color="white"
+              className="white-text contact-icon"
+            />
             Address
           </h5>
-          <p>lorem ipsum street lagoss Nigeria</p>
-          <h5>
-            <Phone color="grey" size="20" className="contact-icon" />
+          <p className="white-text">lorem ipsum street lagoss Nigeria</p>
+          <h5 className="white-text">
+            <Phone color="white" size="20" className="contact-icon" />
             Phone
           </h5>
-          <p>08110745134</p>
-          <p>08110745134</p>
-          <h5>
-            <Mail color="grey" size="20" className="contact-icon" />
+          <p className="white-text">08110745134</p>
+          <p className="white-text">08110745134</p>
+          <h5 className="white-text">
+            <Mail color="white" size="20" className="contact-icon" />
             Email
           </h5>
-          <p>Hivesolution@gmail.com</p>
+          <p className="white-text">Hivesolution@gmail.com</p>
         </div>
       </section>
     </main>
@@ -92,7 +98,6 @@ export const Contact = ({ contactAction, feedback }) => {
 };
 
 const mapStateToProps = (state) => {
-  console.log("feedback-----", state.contact);
   return {
     feedback: state.Contact,
   };

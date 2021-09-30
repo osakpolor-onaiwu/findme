@@ -1,0 +1,55 @@
+@media screen and (min-width: 922px) {
+  main.logs {
+    margin-top: 6%;
+    width: 100%;
+    padding: 4% 4%;
+    form {
+      display: flex;
+      width: 85%;
+      align-items: center;
+      justify-content: center;
+      select {
+        width: 35%;
+        height: 40px;
+        border: 1px solid rgb(12, 12, 12);
+      }
+      input[type="text"] {
+        border: 1px solid rgb(12, 12, 12);
+        width: 35%;
+        margin-left: 2%;
+        height: 40px;
+      }
+      button {
+        background-color: black;
+        border: 1px solid rgb(12, 12, 12);
+        height: 41px;
+        color: white;
+        width: 10%;
+        margin-left: 15px;
+      }
+      ::placeholder {
+        color: $text-grey;
+      }
+    }
+    table {
+      width: 100%;
+      margin-top: 2%;
+      tbody,
+      thead {
+        width: 100%;
+      }
+      th {
+        background-color: black;
+        color: white;
+        font-weight: 700;
+        width: 25%;
+      }
+
+      td {
+        font-weight: 500;
+        width: 25%;
+        border: 1px black solid;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 const Category = require("../../models/category");
+const logger = require("../../logger");
 
 const create = (req, res) => {
   const newCategory = new Category({
@@ -15,13 +16,14 @@ const create = (req, res) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, " create category error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = create;

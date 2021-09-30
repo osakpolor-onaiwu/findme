@@ -1,4 +1,5 @@
 const Faq = require("../../models/FAQ");
+const logger = require("../../logger");
 
 const fetch = async (req, res, next) => {
   await Faq.find()
@@ -10,13 +11,14 @@ const fetch = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "fetch faq error");
       res.status(404).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = fetch;

@@ -1,46 +1,61 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { NavLink } from 'react-router-dom'
-
-
+import React, { Component } from "react";
+import { Facebook, Instagram, Twitter } from "react-feather";
+import { Link } from "react-router-dom";
 
 export const Footer = () => {
-    return (
-        <div>
-            <footer className="page-footer">
-                <div className="container">
-                    <div className="row">
-                        <div className="col s12 m8 l6">
-                            <ul>
-                                <li><NavLink to='/about' className='white-text'> About Us</NavLink></li>
-                                <li>
-                                 <NavLink className='white-text' to='/seller'>become a service provider</NavLink>
-                                </li>
-                                <li><NavLink to='/contact' className='white-text' className='white-text'> Contact Us</NavLink></li>
-                            </ul>
-                        </div>
-                        <div className="col s12 m4 l6">
-                            <img style={{ height: '200px', width: '300px' }} src="./logo2.jpg" alt="logo" />
-                        </div>
-                    </div>
-                </div>
-                <div className="footer-copyright">
-                    <div className="container">
-                        © 2020 Copyright Findme
-                        <a className="grey-text text-lighten-4 right" href="#!">More NavLinks</a>
-                    </div>
-                </div>
-            </footer>
+  return (
+    <footer className="page-footer">
+      <div className="container">
+        <div className="row">
+          <div className="col s12 m7 l8">
+            <ul>
+              <li>
+                <Link className="white-text lis" to="/about">
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link className="white-text lis" to="/seller">
+                  become a service provider
+                </Link>
+              </li>
+              <li>
+                <Link className="white-text lis" to="/contact">
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link className="white-text lis" to="/faq">
+                  FAQs
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col right-side s12 m5 l4">
+            <h4 className="footer-logo">SwiftServe</h4>
+            <span>
+              <a href="#">
+                <Facebook className="social" />
+              </a>
+              <a href="#">
+                <Twitter className="social" />
+              </a>
+              <a href="#">
+                <Instagram className="social" />
+              </a>
+            </span>
+          </div>
         </div>
-    )
-}
+        <div className="white-text lis copy-right center">
+          © 2021 Copyright Hivesolution
+        </div>
+      </div>
+    </footer>
+  );
+};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => ({});
 
-})
+const mapDispatchToProps = {};
 
-const mapDispatchToProps = {
-
-}
-
-export default Footer
+export default Footer;

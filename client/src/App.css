@@ -1,0 +1,40 @@
+main.seller-form {
+  background: url("./images/new-connet.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+main.contact {
+  background: url("./images/contact.jpg") no-repeat center fixed,
+    rgba(68, 63, 63, 0.918);
+  background-size: cover;
+}
+
+main.contact-manufacturer {
+  background: url("./images/contac.jpg") no-repeat center fixed;
+  background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+  div#sub {
+    background: url("./images/abstract.jpg") no-repeat center fixed;
+    background-size: cover;
+    height: 250px;
+  }
+}
+div#sub {
+  background: url("./images/abstract.jpg") no-repeat center fixed;
+  background-size: cover;
+  height: 300px;
+}
+
+div#faqs {
+  background: url("./images/faq.jpg") no-repeat fixed;
+  background-size: cover;
+}
+
+/* main.auth {
+  background: url("./images/welcomeb.jpg"), rgba(12, 12, 12, 0.719) fixed;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position-y: bottom;
+} */

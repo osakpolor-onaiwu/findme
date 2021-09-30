@@ -1,18 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
-import { NavLink } from 'react-router-dom';
-import { MessageCircle } from 'react-feather';
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import SellerAction from "../../redux/actions/sellerAction";
 
-export const Seller = (props) => {
+export const Seller = ({ SellerActions }) => {
   const iniState = {
-    first_name: '',
-    last_name: '',
-    email: '',
+    first_name: "",
+    last_name: "",
+    email: "",
     phone: null,
-    description: '',
-    landmark: '',
-    companyName: '',
-    companyLocation: '',
+    description: "",
+    landmark: "",
+    companyName: "",
+    companyLocation: "",
+    state: "",
+    long: "",
+    lat: "",
   };
 
   const [state, setState] = useState(iniState);
@@ -26,122 +28,180 @@ export const Seller = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(state);
+    SellerActions({
+      ...state,
+    });
   };
   return (
-    <div className='row'>
-      <div className='ContactForm'>
+    <main className="row seller-form">
+      <div className="col s12 m12 l6 right-text hide-on-large-only">
+        <h3 className="white-text">Would you love to sell?</h3>
+        <p className="white-text">
+          if YES!, then contact us with form, and we will get back to you on
+          terms and conditions.
+        </p>
+      </div>
+      <div className="col s12 m12 l6">
         <form onSubmit={handleSubmit}>
-          <div className='center '>
-            <MessageCircle color='black' size='30' />
-            <h5>Your Details</h5>
-          </div>
-          <div className='input-field col s12 l6'>
+          <div>
+            <label htmlFor="first_name">First Name</label>
             <input
               required={true}
-              name='first_name'
+              name="first_name"
               onChange={handleChange}
-              type='text'
-              id='first_name'
-              className='validate'
+              type="text"
+              id="first_name"
+              className="validate browser-default"
             />
-            <label htmlFor='first_name'>First Name</label>
-          </div>
-          <div className='input-field col s12 l6'>
-            <input
-              required={true}
-              name='last_name'
-              onChange={handleChange}
-              type='text'
-              id='last_name'
-              className='validate'
-            />
-            <label htmlFor='last_name'>Last Name</label>
           </div>
 
-          <div className='input-field col s12 '>
+          <div>
+            <label htmlFor="last_name">Last Name</label>
             <input
               required={true}
-              name='email'
+              name="last_name"
               onChange={handleChange}
-              type='email'
-              id='email'
-              className='validate'
+              type="text"
+              id="last_name"
+              className="validate browser-default"
             />
-            <label htmlFor='email' data-error='wrong' data-success='right'>
+          </div>
+
+          <div>
+            <label htmlFor="email" data-error="wrong" data-success="right">
               Email
             </label>
-          </div>
-
-          <div className='input-field col s12 l12'>
             <input
               required={true}
-              name='companyName'
+              name="email"
               onChange={handleChange}
-              type='text'
-              id='companyName'
-              className='validate'
+              type="email"
+              id="email"
+              className="validate browser-default"
             />
-            <label htmlFor='companyName'>Company Name</label>
           </div>
 
-          <div className='input-field col s12 '>
+          <div>
+            <label htmlFor="companyName">Company Name</label>
             <input
               required={true}
-              name='companyLocation'
+              name="companyName"
               onChange={handleChange}
-              type='text'
-              id='companyLocation'
-              className='validate'
+              type="text"
+              id="companyName"
+              className="validate browser-default"
             />
-            <label htmlFor='companyLocation'>Company Location</label>
           </div>
 
-          <div className='input-field col s12 l12'>
+          <div>
+            <label htmlFor="companyLocation">Company Location</label>
             <input
               required={true}
-              name='landmark'
+              name="companyLocation"
               onChange={handleChange}
-              type='text'
-              id='landmark'
-              className='validate'
+              type="text"
+              id="companyLocation"
+              className="validate browser-default"
             />
-            <label htmlFor='companyName'>Nearest Landmark</label>
           </div>
 
-          <div className='input-field col s12'>
+          <div>
+            <label htmlFor="landmark">Nearest Landmark</label>
             <input
               required={true}
-              name='phone'
+              name="landmark"
               onChange={handleChange}
-              type='tel'
-              id='phone'
-              className='validate'
+              type="text"
+              id="landmark"
+              className="validate browser-default"
             />
-            <label htmlFor='phone' data-error='wrong' data-success='right'>
+          </div>
+
+          <div>
+            <label htmlFor="state">State</label>
+            <input
+              required={true}
+              name="state"
+              onChange={handleChange}
+              type="text"
+              id="state"
+              className="validate browser-default"
+            />
+          </div>
+          <div>
+            <label htmlFor="phone" data-error="wrong" data-success="right">
               Phone
             </label>
-          </div>
-          <div className='input-field browser-default col s12'>
-            <textarea
-              id='textarea1'
+            <input
+              required={true}
+              name="phone"
               onChange={handleChange}
-              name='description'
-              className='materialize-textarea '
-            ></textarea>
-            <label htmlFor='description'>Describe the service you offer</label>
+              type="tel"
+              id="phone"
+              className="validate browser-default"
+            />
           </div>
-          <button className='button white-text' type='submit' name='action'>
+
+          <div>
+            <label htmlFor="long" data-error="wrong" data-success="right">
+              Longitude
+            </label>
+            <input
+              name="long"
+              onChange={handleChange}
+              type="text"
+              id="long"
+              className="validate browser-default"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="lat" data-error="wrong" data-success="right">
+              Latitude
+            </label>
+            <input
+              name="lat"
+              onChange={handleChange}
+              type="text"
+              id="lat"
+              className="validate browser-default"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="description">Describe the service you offer</label>
+            <textarea
+              id="textarea1"
+              onChange={handleChange}
+              name="description"
+              className=" browser-default"
+              required={true}
+            ></textarea>
+          </div>
+          <button className="button white-text" type="submit" name="action">
             Submit
           </button>
         </form>
       </div>
-    </div>
+      <div className="col s12 m12 l6 right-text hide-on-med-and-down">
+        <h3 className="white-text">Would you love to sell?</h3>
+        <p className="white-text">
+          if YES!, then contact us with form, and we will get back to you on
+          terms and conditions.
+        </p>
+      </div>
+    </main>
   );
 };
 
 const mapStateToProps = (state) => ({});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    SellerActions: (seller) => {
+      dispatch(SellerAction(seller));
+    },
+  };
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Seller);

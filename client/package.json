@@ -9,6 +9,7 @@
     "axios": "^0.21.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
+    "log4js": "^6.3.0",
     "materialize": "^1.0.0",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^17.0.1",

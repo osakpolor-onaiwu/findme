@@ -1,4 +1,4 @@
-$backgroundBlue: mix(rgb(18, 49, 106), rgb(12, 67, 109), 60%);
+$backgroundBlue: mix(rgb(0, 0, 0), rgb(6, 7, 8), 60%);
 $FormRed: mix(rgba(165, 10, 10, 0.809), rgba(157, 12, 12, 0.597), 60%);
 $gradientRed: linear-gradient(
   to right,
@@ -6,5 +6,6 @@ $gradientRed: linear-gradient(
   rgba(157, 12, 12, 0.597)
 );
 
-$buttonBlue: mix(rgba(18, 49, 106, 0.7), rgb(12, 67, 109), 60%);
+$buttonBlue: mix(rgba(0, 0, 0, 0.918), rgb(4, 5, 5), 60%);
 $text-grey: rgba(41, 38, 38, 0.829);
+$bodygrey: rgba(238, 236, 236, 0.699);

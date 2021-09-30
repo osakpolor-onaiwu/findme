@@ -1,12 +1,13 @@
 import React, { Component, useState } from "react";
 import { connect } from "react-redux";
-import { ArrowRight, X, Compass, Mail, Phone } from "react-feather";
+import States from "./little database/states";
 import SearchForm from "../extra/search";
-import { NavLink } from "react-router-dom";
+import Result from "../extra/manufacturerFilter";
 
 const Manufacturers = ({ manufacturers }) => {
   const iniState = {
     filter: "",
+    filterState: "",
   };
 
   const [state, setState] = useState(iniState);
@@ -18,87 +19,47 @@ const Manufacturers = ({ manufacturers }) => {
     });
   };
 
-  const result = () => {
-    if (state.filter == "") {
-      const All = manufacturers.length ? (
-        manufacturers.map((manufacturer) => {
-          return (
-            <div key={manufacturer._id} className="col s12 m6 l4">
-              <NavLink
-                className="black-text manufacturer-container"
-                to={`/manufacturer/${manufacturer.companyName}`}
-              >
-                <div className=" manufacturer  ">
-                  <h3> {manufacturer.companyName} </h3>
-                  <h5>
-                    <strong>Address</strong>: {manufacturer.address}
-                  </h5>
-                  <h6 className="center">Contact me</h6>
-                </div>
-              </NavLink>
-            </div>
-          );
-        })
-      ) : (
-        <div className="contain">No manufacturers in this category yet</div>
-      );
-
-      return All;
-    } else {
-      const Search = manufacturers.filter((manufacturer) => {
-        const City = manufacturer.city;
-
-        return City.match(state.filter);
-      });
-
-      const SearchResult = Search ? (
-        Search.map((manufacturer) => {
-          return (
-            <div key={manufacturer._id} className="col s12 m6 l4">
-              <NavLink
-                className="black-text manufacturer-container"
-                to={`/manufacturer/${manufacturer.companyName}`}
-              >
-                <div className=" manufacturer  ">
-                  <h3> {manufacturer.companyName} </h3>
-                  <h5>
-                    <strong>Address</strong>: {manufacturer.address}
-                  </h5>
-                  <h5>
-                    <strong>state</strong>: {manufacturer.state}
-                  </h5>
-                  <h5>
-                    <strong>city</strong>: {manufacturer.city}
-                  </h5>
-                  <h6 className="center">Contact this Manufacturer</h6>
-                </div>
-              </NavLink>
-            </div>
-          );
-        })
-      ) : (
-        <li className="black-text">No Record Matches {state.search}</li>
-      );
-
-      return SearchResult;
-    }
-  };
+  const options = States.length ? (
+    States.map((eachState) => {
+      return <option value={eachState}>{eachState}</option>;
+    })
+  ) : (
+    <div></div>
+  );
 
   return (
     <main id="manufacturers">
-      <section className="row contain ">
-        <form className="browser-default col s12 m12 l7">
-          <input
-            name="filter"
-            onChange={handleChange}
-            className="browser-default black-text validate manufacturer-search"
-            type="text"
-            required={true}
-            placeholder="Search by Manufacturer city"
-          />
-        </form>
+      <div id="sub">
+        <section className="center search-form-section">
+          <SearchForm />
+        </section>
+        <section className="row filter">
+          <form className="browser-default col s12 m12 l12">
+            <input
+              name="filter"
+              onChange={handleChange}
+              className="browser-default black-text validate manufacturer-search"
+              type="text"
+              required={true}
+              placeholder="Filter by city"
+            />
+
+            <select
+              name="filterState"
+              onChange={handleChange}
+              className="browser-default"
+              defaultValue={state.filterState}
+            >
+              <option value="">Filter By state</option>
+              {options}
+            </select>
+          </form>
+        </section>
+      </div>
+
+      <section className="row result">
+        <Result state={state} manufacturers={manufacturers} />
       </section>
-      <section className="row contain">{result()}</section>
       <section className="row bottom-row"></section>
     </main>
   );

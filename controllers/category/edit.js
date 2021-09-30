@@ -1,4 +1,5 @@
 const Category = require("../../models/category");
+const logger = require("../../logger");
 
 const updates = async (req, res, next) => {
   if (!req.params.id) {
@@ -22,13 +23,14 @@ const updates = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "edit category error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = updates;

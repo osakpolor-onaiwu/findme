@@ -1,0 +1,106 @@
+@media screen and (min-width: 922px) {
+  main.faq {
+    margin-top: 2%;
+
+    div#faqs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 400px;
+      margin-bottom: 2%;
+      h5 {
+        color: white;
+        font-weight: 700;
+        font-size: 30px;
+      }
+    }
+    h6.question {
+      color: white;
+      background-color: black;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .add-icon {
+      margin-right: 10px;
+    }
+    .show {
+      visibility: visible;
+    }
+    .hide {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 921px) {
+  main.faq {
+    margin-top: 4%;
+
+    div#faqs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      h5 {
+        color: white;
+        font-weight: 700;
+        font-size: 30px;
+      }
+    }
+
+    h6.question {
+      color: white;
+      background-color: black;
+      font-size: 15px;
+      padding: 20px;
+    }
+
+    .add-icon {
+      margin-right: 10px;
+    }
+    .show {
+      visibility: visible;
+    }
+    .hide {
+      visibility: hidden;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main.faq {
+    margin-top: 0%;
+
+    div#faqs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 300px;
+      h5 {
+        color: white;
+        font-weight: 700;
+        font-size: 24px;
+      }
+    }
+
+    h6.question {
+      color: white;
+      background-color: black;
+      font-size: 15px;
+      padding: 12px;
+    }
+
+    .add-icon {
+      margin-right: 10px;
+    }
+    .show {
+      visibility: visible;
+      transition: visibility 2s;
+    }
+    .hide {
+      visibility: hidden;
+      transition: visibility 2s;
+    }
+  }
+}

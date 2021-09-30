@@ -1,7 +1,7 @@
 @media screen and (min-width: 922px) {
   main.about {
-    background: rgb(240, 240, 240) fixed;
-    margin-top: -20px;
+    background-color: $bodygrey;
+    padding-top: 4%;
     h3,
     h4 {
       color: $backgroundBlue;
@@ -28,8 +28,8 @@
         width: 300px;
         height: 200px;
         left: 0%;
-        bottom: 5%;
-        z-index: 2;
+        bottom: 3%;
+        z-index: 1;
         border: 8px white solid;
       }
     }
@@ -40,34 +40,24 @@
     }
 
     section.third-section {
-      padding: 3% 8%;
       background: white;
-
+      padding: 5% !important;
       p {
         text-align: justify;
       }
 
       div#vision {
-        position: relative;
+        padding: 5% !important;
         height: 450px;
         img {
-          height: 400px;
+          height: 450px;
           width: 100%;
+          margin-top: -15px;
         }
-        // img.about-img-vision-1 {
-        //   position: absolute;
-        //   left: 0%;
-        //   top: 0%;
-        // }
-        // img.about-img-vision-2 {
-        //   position: absolute;
-        //   right: 10%;
-        //   top: 10%;
-        // }
       }
 
       div#vision-text {
-        padding-top: 70px;
+        padding: 1% 8%;
         p {
           font-size: 20px;
         }
@@ -76,6 +66,8 @@
 
     section.bottom-section {
       padding-bottom: 50px;
+      background: rgb(240, 240, 240) fixed;
+      margin-bottom: 0%;
       display: flex;
       width: 100%;
       flex-wrap: nowrap;
@@ -106,8 +98,8 @@
 
 @media screen and (max-width: 921px) and (min-width: 601px) {
   main.about {
-    background: rgb(240, 240, 240);
-    margin-top: -3px;
+    background-color: rgba(253, 253, 253, 0.699);
+    padding-top: 15%;
     h3,
     h4 {
       color: $backgroundBlue;
@@ -136,8 +128,8 @@
         width: 220px;
         height: 170px;
         left: 0%;
-        top: 35%;
-        z-index: 2;
+        top: 45%;
+        z-index: 1;
         border: solid 3px white;
       }
     }
@@ -148,34 +140,32 @@
     }
 
     section.third-section {
-      padding: 3% 5%;
+      padding: 7% 0% !important;
       background-color: white;
 
       p {
         text-align: justify;
       }
       div#vision {
-        position: relative;
         height: 300px;
+        padding: 5% !important;
         img {
-          height: 220px;
-          width: 47%;
+          height: 300px;
+          width: 100%;
         }
-        img.about-img-vision-1 {
-          position: absolute;
-          left: 0%;
-          top: 0%;
-        }
-        img.about-img-vision-2 {
-          position: absolute;
-          right: 10%;
-          top: 10%;
+      }
+
+      div#vision-text {
+        padding: 1% 5%;
+        p {
+          font-size: 20px;
         }
       }
     }
 
     section.bottom-section {
-      padding-bottom: 50px;
+      background: rgb(240, 240, 240) fixed;
+      margin-bottom: 0%;
       display: flex;
       width: 100%;
       flex-wrap: nowrap;
@@ -206,7 +196,8 @@
 
 @media screen and (max-width: 600px) {
   main.about {
-    background: rgb(240, 240, 240);
+    background-color: rgba(253, 253, 253, 0.699);
+    padding-top: 20%;
     h3,
     h4 {
       color: $backgroundBlue;
@@ -235,7 +226,7 @@
         width: 180px;
         height: 120px;
         left: 0%;
-        top: 30%;
+        top: 40%;
         border: white solid 7px;
         z-index: 2;
       }
@@ -247,23 +238,22 @@
     }
 
     section.third-section {
-      padding: 3% 2%;
+      padding: 3% 0;
       background-color: white;
       div#vision {
         height: 300px;
+        padding: 5% !important;
         img {
           height: 250px;
           width: 100%;
-        }
-
-        img.about-img-vision-2 {
-          display: none;
         }
       }
     }
 
     section.bottom-section {
+      background: rgb(240, 240, 240) fixed;
       padding: 20px 0;
+      margin-bottom: 0%;
       display: flex;
       width: 100%;
       flex-wrap: wrap;

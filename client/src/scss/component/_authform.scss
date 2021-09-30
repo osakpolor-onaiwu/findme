@@ -1,78 +1,131 @@
-@media only screen and (min-width: 501px) {
-    div.authform {
-        width: 100%;
-        margin: 3% auto;
-    }
-
-    form.black-text {
-        margin: 50px auto auto auto;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media only screen and (min-width: 922px) {
+  main.auth {
+    padding-top: 8.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3%;
+      align-items: center;
+      flex-direction: column;
+      p {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      label {
+        font-size: 17px;
+        font-weight: 500;
+        display: none;
+      }
+      input {
+        width: 60%;
+        height: 45px;
+        margin-top: 1%;
+        color: black !important;
+      }
+      ::placeholder {
         color: black;
-        padding: 3% 5% 1% 5%;
-        width: 55%;
-        box-shadow: 0 2px 5px black;
-        label {
-            margin: 20px 0 5px 0;
-        }
-
-        input {
-            height: 45px;
-            border-radius: 0px;
-            padding: 0 0 0 5px;
-            margin-bottom: 5px;
-            transition: all 0.5s;
-        }
-
-        .butlink {
-            color: white;
-            text-decoration: none;
-        }
-        button {
-            @include buttonA(150px);
-        }
+        padding-left: 5px;
+      }
+      button {
+        width: 60%;
+        padding: 3%;
+        color: white;
+        margin: 1% 0 2% 0;
+        background-color: black;
+        border: none;
+      }
     }
+  }
 }
 
-@media only screen and (max-width: 500px) {
-    div.authform {
-        width: 100%;
-        margin: 3% auto;
-    }
-
-    form.black-text {
-        margin: 50px 3% auto 4%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+@media only screen and (min-width: 601px) and (max-width: 921px) {
+  main.auth {
+    padding-top: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3%;
+      align-items: center;
+      flex-direction: column;
+      p {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      label {
+        font-size: 17px;
+        font-weight: 500;
+        display: none;
+      }
+      input {
+        width: 80%;
+        height: 45px;
+        margin-top: 1%;
+        color: black !important;
+      }
+      ::placeholder {
         color: black;
-        padding: 5% 10% 1% 10%;
-        width: 90%;
-        box-shadow: 0 2px 5px black;
-     
-        label {
-            margin: 20px 0 5px 0;
-        }
-
-        input {
-            height: 45px;
-
-            border-radius: 0px;
-            padding: 0 0 0 5px;
-            margin-bottom: 5px;
-            transition: all 0.5s;
-        }
-
-        .butlink {
-            color: white;
-            text-decoration: none;
-        }
-
-        button {
-            @include buttonA(150px);
-        }
+        padding-left: 5px;
+      }
+      button {
+        width: 80%;
+        padding: 4%;
+        color: white;
+        margin: -6% 0 2% 0;
+        background-color: black;
+        border: none;
+      }
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  main.auth {
+    padding-top: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    form {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3%;
+      align-items: center;
+      flex-direction: column;
+      p {
+        font-size: 17px;
+        font-weight: 500;
+      }
+      label {
+        font-size: 17px;
+        font-weight: 500;
+        display: none;
+      }
+      input {
+        width: 80%;
+        height: 45px;
+        margin-top: 1%;
+        color: black !important;
+      }
+      ::placeholder {
+        color: black;
+        padding-left: 5px;
+      }
+      button {
+        width: 80%;
+        padding: 4%;
+        color: white;
+        margin: -6% 0 2% 0;
+        background-color: black;
+        border: none;
+      }
+    }
+  }
 }

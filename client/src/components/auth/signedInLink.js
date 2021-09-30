@@ -5,32 +5,10 @@ import { NavLink, Link, Redirect } from "react-router-dom";
 import SignOut from "../../redux/actions/logoutAction";
 
 const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
-  const initialState = {
-    show: false,
-  };
-
-  const [state, setState] = useState(initialState);
-
-  const toggle = () => {
-    setState({
-      show: !state.show,
-    });
-  };
-
-  useEffect(() => {
-    // window.onclick = toggle;
-
-    if (state.show === false) {
-      document.getElementById("myDropdown-content").className = "hide";
-    } else {
-      document.getElementById("myDropdown-content").className = "show";
-    }
-  }, [state.show]);
-
   const showcategories = category.length ? (
     category.map((item) => {
       return (
-        <li key={item._id}>
+        <li key={item._id} className="drop">
           <NavLink className="white-text" to={`/category/${item.name}`}>
             {item.name}
           </NavLink>
@@ -50,7 +28,7 @@ const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
 
   const Links = (
     <ul id="nav-large" className=" hide-on-med-and-down">
-      <h6>Hivesolution</h6>
+      <img className="log" src="/logo.jpg" alt="logo" />
       <li>
         <Link className="navigation-link" to="/">
           Home
@@ -68,8 +46,8 @@ const SignedInLink = ({ category, logout, isAuthenticated, user }) => {
       </li>
 
       {/* <!-- Dropdown  */}
-      <li className="dropdownContainer mydrop-trigger" onClick={toggle}>
-        <a href="#!" className=" navigation-link">
+      <li className="dropdownContainer">
+        <a href="#!" className="drop-trigger navigation-link">
           Categories
         </a>
         <ul id="myDropdown-content" className="content">

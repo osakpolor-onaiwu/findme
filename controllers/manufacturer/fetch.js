@@ -5,7 +5,7 @@ const fetch = async (req, res, next) => {
     .find()
     .populate("category")
     .select("-phone -sample ")
-    .sort({ name: 1 })
+    .sort({ fullname: 1 })
     .then((data) =>
       res.status(200).json({
         status: "Success",

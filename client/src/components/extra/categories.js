@@ -45,7 +45,7 @@ export const Categories = ({ category }) => {
   };
 
   return (
-    <main id="category" className="contain">
+    <main id="category" className="">
       <h6 className="center home-category-related-text">CATEGORIES</h6>
       {categoriesgallary()}
     </main>

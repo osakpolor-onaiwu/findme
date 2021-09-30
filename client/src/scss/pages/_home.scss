@@ -1,4 +1,7 @@
 @media screen and (min-width: 922px) {
+  section.banner-section {
+    margin-top: 0%;
+  }
   section.about-section {
     background-color: white;
     height: 400px;
@@ -8,13 +11,18 @@
     }
   }
 
-  section.scroll-section {
+  section#to-categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .scroll-button {
-      margin-top: 50px !important;
       @include buttonA(150px);
+      text-align: center;
     }
   }
-  section.sample-section {
+
+  section.categories-section {
     margin-top: 50px;
     padding-top: 5px;
     padding-bottom: 30px;
@@ -23,10 +31,17 @@
 }
 
 @media screen and (max-width: 921px) and (min-width: 601px) {
-  section.scroll-section {
+  main#home {
+    margin-top: -4%;
+  }
+  section#to-categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .scroll-button {
-      margin-top: 50px;
       @include buttonA(150px);
+      text-align: center;
     }
   }
   section.about-section {
@@ -37,7 +52,7 @@
     }
   }
 
-  section.sample-section {
+  section.categories-section {
     padding-top: 5px;
     padding-bottom: 20px;
     background: fixed rgb(240, 240, 240);
@@ -45,10 +60,17 @@
 }
 
 @media screen and (max-width: 600px) {
-  section.scroll-section {
+  main#home {
+    margin-top: -7%;
+  }
+  section#to-categories {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .scroll-button {
-      margin-top: 50px !important;
       @include buttonA(150px);
+      text-align: center;
     }
   }
 
@@ -59,7 +81,7 @@
       @include buttonA(150px);
     }
   }
-  section.sample-section {
+  section.categories-section {
     padding-top: 5px;
     padding-bottom: 20px;
     background: fixed rgb(240, 240, 240);

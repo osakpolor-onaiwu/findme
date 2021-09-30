@@ -1,16 +1,19 @@
 import React, { Component, useEffect } from "react";
 import { connect } from "react-redux";
 import { Dropdown } from "react-materialize";
-import { AlignJustify, ArrowDown } from "react-feather";
 import { NavLink } from "react-router-dom";
 
 const SignedOutLinkMobile = ({ category }) => {
   const showcategories = category.length ? (
     category.map((item) => {
       return (
-        <li key={item._id} className="sidenav-close">
-          <NavLink to={`/category/${item.name}`}>{item.name}</NavLink>
-        </li>
+        <NavLink
+          key={item._id}
+          to={`/category/${item.name}`}
+          className="sidenav-close category-dropdown white-text"
+        >
+          {item.name}
+        </NavLink>
       );
     })
   ) : (
@@ -19,15 +22,10 @@ const SignedOutLinkMobile = ({ category }) => {
 
   const Link = (
     <div>
-      <li style={{ marginBottom: "60%" }}>
-        <div className="user-view">
-          <div style={{ height: "200px" }} className="background">
-            <img style={{ height: "100%", width: "100%" }} src="./logo2.png" />
-          </div>
-        </div>
-      </li>
       <li className="sidenav-close">
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className="white-text">
+          Home
+        </NavLink>
       </li>
       {/* <!-- Dropdown Trigger --> */}
       <li>
@@ -43,28 +41,40 @@ const SignedOutLinkMobile = ({ category }) => {
             inDuration: 150,
             outDuration: 250,
           }}
-          trigger={<a href="#!">Categories</a>}
+          trigger={
+            <a href="#!" className="white-text">
+              Categories
+            </a>
+          }
         >
           {showcategories}
         </Dropdown>
       </li>
       <li className="sidenav-close">
-        <NavLink to="/about">About</NavLink>
+        <NavLink to="/about" className="white-text">
+          About
+        </NavLink>
       </li>
       <li className="sidenav-close">
-        <NavLink to="/contact">Contact</NavLink>
+        <NavLink to="/contact" className="white-text">
+          Contact
+        </NavLink>
       </li>
       <li className="sidenav-close">
-        <NavLink to="/seller" className="navigation-link">
+        <NavLink to="/seller" className="navigation-link white-text">
           Sell
         </NavLink>
       </li>
 
       <li className="sidenav-close">
-        <NavLink to="/login">login</NavLink>
+        <NavLink to="/login" className="white-text">
+          login
+        </NavLink>
       </li>
       <li className="sidenav-close">
-        <NavLink to="/signUp">SignUp</NavLink>
+        <NavLink to="/signUp" className="white-text">
+          SignUp
+        </NavLink>
       </li>
     </div>
   );

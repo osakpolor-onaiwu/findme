@@ -14,8 +14,8 @@ export default function About() {
         </div>
 
         <div id="about-img" className="col s12 m6 l6 ">
-          <img className="about-img-1" src="./new-connet.jpg" alt="connect" />
-          <img className="about-img-2" src="./touch.jpg" alt="touch" />
+          <img className="about-img-1" src="./sellerB.jpg" alt="connect" />
+          <img className="about-img-2" src="./connect.jpg" alt="touch" />
         </div>
       </section>
       <section className="row middle-section ">
@@ -34,14 +34,10 @@ export default function About() {
       </section>
 
       <section className="row third-section ">
-        <div id="vision" className="col s12 m6 l6 ">
-          <img
-            className="about-img-vision-1"
-            src="./new-connet.jpg"
-            alt="touch"
-          />
+        <div id="vision" className="col s12  ">
+          <img className="about-img-vision-1" src="./link.png" alt="touch" />
         </div>
-        <div id="vision-text" className="col s12 m6 l6 center">
+        <div id="vision-text" className="col  center">
           <h5 className="center">OUR VISION</h5>
           <p>
             Ex duis mollit cupidatat minim velit est eiusmod ea. Sunt ea aute

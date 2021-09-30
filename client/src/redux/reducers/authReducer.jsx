@@ -11,7 +11,7 @@ const authReducer = (state = initialState, action) => {
     case "LOGIN_ERROR": {
       localStorage.removeItem("token");
       localStorage.removeItem("user details");
-      console.log("login error");
+      // console.log("login error");
       return {
         ...state,
         isAuthenticated: false,
@@ -23,7 +23,7 @@ const authReducer = (state = initialState, action) => {
     }
 
     case "LOGIN_SUCCESS":
-      console.log("login success");
+      // console.log("login success");
       localStorage.setItem("token", action.user.token);
       const userDetail = JSON.stringify(action.userDetail);
       localStorage.setItem("user details", userDetail);
@@ -61,7 +61,7 @@ const authReducer = (state = initialState, action) => {
 
     //from signout
     case "LOGOUT_SUCCESS":
-      console.log("Logout success");
+      // console.log("Logout success");
       localStorage.removeItem("token");
       localStorage.removeItem("user details");
       return {

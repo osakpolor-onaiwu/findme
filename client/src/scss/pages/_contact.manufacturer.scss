@@ -1,52 +1,190 @@
 @media screen and (min-width: 922px) {
-  .provider-name {
-    text-decoration: underline 2px;
+  main.contact-manufacturer {
+    padding-top: 7%;
+    margin-bottom: -1%;
+    position: relative;
+    section.overlay {
+      background-color: rgba(0, 0, 0, 0.918);
+      height: 100%;
+      width: 100%;
+    }
+    div.form-col {
+      display: flex;
+
+      padding: 1% 1% 2% 5%;
+      form {
+        width: 80%;
+        padding: 2%;
+
+        label {
+          padding: 15px 10px 15px 0;
+          display: inline-block;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+        }
+
+        input {
+          float: right;
+          height: 40px;
+          width: 50%;
+          border-radius: 1px;
+          background-color: white;
+          border: 1px solid rgb(70, 43, 38);
+          &:focus {
+            border: none;
+            box-shadow: 1px 1px 4px red !important;
+          }
+        }
+
+        ::placeholder {
+          color: black;
+        }
+
+        textarea {
+          height: 100px;
+          background-color: white;
+        }
+      }
+    }
+
+    div.rightText {
+      padding: 1% 2% 2% 2%;
+      h3 {
+        text-decoration: underline;
+        font-weight: bold;
+      }
+      h5 {
+        font-size: 20px;
+        font-weight: 500;
+      }
+    }
   }
-  p.card-text {
-    font-size: 16px;
-    padding: 4px 5px;
-    background: $backgroundBlue;
-    position: absolute;
-    z-index: 1;
-    bottom: 5px;
-    left: 0px;
-    width: 85%;
-    clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+  .carousel-images {
+    height: 320px !important;
   }
 }
 
 @media screen and (min-width: 601px) and (max-width: 921px) {
-  .provider-name {
-    text-decoration: underline;
-  }
+  main.contact-manufacturer {
+    padding-top: 8%;
+    margin-bottom: -1%;
 
-  p.card-text {
-    font-size: 15px;
-    padding: 4px 5px;
-    background: $backgroundBlue;
-    position: absolute;
-    z-index: 1;
-    bottom: 25px;
-    left: -10px;
-    width: 85%;
-    clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+    div.form-col {
+      display: flex;
+      padding: 1% 1% 2% 1%;
+      form {
+        width: 100%;
+        padding: 2%;
+        > h5 {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        label {
+          padding: 15px 10px 15px 0;
+          display: inline-block;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+        }
+
+        input {
+          float: right;
+          height: 40px;
+          width: 50%;
+          border-radius: 1px;
+          background-color: white;
+          border: 1px solid rgb(70, 43, 38);
+          &:focus {
+            border: none;
+            box-shadow: 1px 1px 4px red !important;
+          }
+        }
+
+        ::placeholder {
+          color: black;
+        }
+        textarea {
+          height: 100px;
+          background-color: white;
+        }
+      }
+    }
+
+    div.rightText {
+      padding: 2% 2%;
+      text-align: center;
+      h3 {
+        text-decoration: underline;
+        font-weight: bold;
+        text-align: center;
+        font-size: 30px;
+      }
+
+      h5 {
+        font-size: 17px;
+      }
+    }
   }
 }
 
 @media screen and (max-width: 600px) {
-  .provider-name {
-    text-decoration: underline;
-  }
+  main.contact-manufacturer {
+    padding-top: 12%;
+    margin-bottom: -1%;
 
-  p.card-text {
-    font-size: 14px;
-    padding: 4px 5px;
-    background: $backgroundBlue;
-    position: absolute;
-    z-index: 1;
-    bottom: 25px;
-    left: -10px;
-    width: 85%;
-    clip-path: polygon(0% 0%, 100% 0%, 93% 100%, 0% 100%);
+    div.form-col {
+      display: flex;
+      padding: 1% 2% 2% 2%;
+      form {
+        width: 100%;
+        padding: 2%;
+        > h5 {
+          font-size: 20px;
+          font-weight: bold;
+        }
+        label {
+          padding: 15px 10px 15px 0;
+          display: inline-block;
+          font-size: 15px;
+          font-weight: bold;
+          color: white;
+        }
+
+        input {
+          float: right;
+          height: 40px;
+          width: 50%;
+          border-radius: 1px;
+          background-color: white;
+          border: 1px solid rgb(70, 43, 38);
+          &:focus {
+            border: none;
+            box-shadow: 1px 1px 4px red !important;
+          }
+        }
+        ::placeholder {
+          color: black;
+        }
+        textarea {
+          height: 100px;
+          background-color: white;
+        }
+      }
+    }
+
+    div.rightText {
+      padding: 2% 2% 2% 2%;
+      text-align: center;
+      h3 {
+        text-decoration: underline;
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+      }
+      h5 {
+        font-size: 13px;
+      }
+    }
   }
 }

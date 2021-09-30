@@ -1,4 +1,5 @@
 const Category = require("../../models/category");
+const logger = require("../../logger");
 
 const deletes = async (req, res, next) => {
   Category.findByIdAndDelete(req.params.id)
@@ -9,13 +10,14 @@ const deletes = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "delete category error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = deletes;

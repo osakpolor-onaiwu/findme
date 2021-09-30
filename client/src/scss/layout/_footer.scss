@@ -1,3 +1,39 @@
 footer.page-footer {
-    background-color: $backgroundBlue;
+  background-color: #000000;
+  ul {
+    li > .lis {
+      font-weight: 500;
+      font-size: 15px;
+    }
+  }
+  .copy-right {
+    padding: 5% 0 1% 0;
+  }
+
+  h4.footer-logo {
+    color: white;
+    font-weight: 700;
+    letter-spacing: 12px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  footer.page-footer {
+    background-color: #000000;
+
+    .copy-right {
+      padding: 5% 0 1% 0;
+    }
+    div.right-side {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    h4.footer-logo {
+      color: white;
+      font-weight: 700;
+      letter-spacing: 12px;
+    }
+  }
 }

@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const Category = require("./category.js");
-const Samples = require("./samples");
+const Samples = require("./samples.js");
 
 module.exports = mongoose.model(
   "Manufacturer",

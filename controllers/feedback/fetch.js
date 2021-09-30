@@ -1,4 +1,5 @@
 const feedback = require("../../models/feedback");
+const logger = require("../../logger");
 
 const fetch = async (req, res, next) => {
   await feedback
@@ -11,13 +12,14 @@ const fetch = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "fetch feedback error");
       res.status(404).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = fetch;

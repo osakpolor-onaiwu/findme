@@ -1,4 +1,5 @@
 const Faq = require("../../models/FAQ");
+const logger = require("../../logger");
 
 const deletes = async (req, res, next) => {
   await Faq.findByIdAndDelete(req.params.id)
@@ -9,13 +10,14 @@ const deletes = async (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "delete faq error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = deletes;

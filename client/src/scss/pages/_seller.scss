@@ -1,0 +1,152 @@
+@media screen and (min-width: 922px) {
+  main.seller-form {
+    width: 100%;
+    margin-top: 2%;
+    display: flex;
+    padding: 5% 0 5% 5%;
+    margin-bottom: 0%;
+    form {
+      border-radius: 6px;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      label {
+        color: white !important;
+        padding: 15px 20px 15px 0;
+        display: inline-block;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      input {
+        height: 40px;
+        width: 50%;
+        float: right;
+        border: 1px solid;
+        &:focus {
+          box-shadow: 1px 1px 4px rgb(20, 24, 29) !important;
+          border: 1px solid !important;
+        }
+      }
+      textarea {
+        border: 1px solid;
+        min-height: 150px;
+        background-color: white !important;
+      }
+    }
+
+    div.right-text {
+      padding: 10% 5%;
+      h3 {
+        font-size: 35px;
+        font-weight: bold;
+      }
+      p {
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 921px) {
+  main.seller-form {
+    width: 100%;
+    margin-top: 4%;
+    padding: 5% 5% 5% 5%;
+    margin-bottom: 0%;
+    form {
+      border-radius: 7px;
+      width: 100%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      label {
+        color: white !important;
+        padding: 15px 20px 15px 0;
+        font-size: 15px;
+        font-weight: bold;
+      }
+      input {
+        height: 40px;
+        width: 100%;
+        border: 1px solid;
+        &:focus {
+          box-shadow: 1px 1px 4px rgba(53, 72, 75, 0.87) !important;
+          border: 1px solid !important;
+        }
+      }
+      textarea {
+        border: 1px solid;
+        min-height: 150px;
+        background-color: white !important;
+      }
+    }
+
+    div.right-text {
+      padding: 6% 5% 2% 5%;
+      h3 {
+        font-size: 45px;
+        font-weight: bold;
+        text-align: center;
+      }
+      p {
+        font-size: 20px;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main.seller-form {
+    width: 100%;
+    margin-top: 0%;
+    padding: 10% 5% 5% 5%;
+    margin-bottom: 0%;
+    form {
+      border-radius: 6px;
+      width: 100%;
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      label {
+        color: white !important;
+        padding: 15px 20px 15px 0;
+        margin-top: 30px;
+        font-size: 15px;
+        font-weight: bold;
+        color: $text-grey;
+      }
+      input {
+        height: 40px;
+        width: 100%;
+        border: 1px solid;
+        &:focus {
+          box-shadow: 1px 1px 4px red !important;
+          border: 1px solid !important;
+        }
+      }
+      textarea {
+        border: 1px solid;
+        min-height: 150px;
+        background-color: white !important;
+      }
+    }
+
+    div.right-text {
+      padding: 5% 5%;
+      h3 {
+        font-size: 35px;
+        font-weight: bold;
+        text-align: center;
+      }
+      p {
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 const Faq = require("../../models/FAQ");
+const logger = require("../../logger");
 
 const create = async (req, res, next) => {
   const body = req.body;
@@ -29,6 +30,7 @@ const create = async (req, res, next) => {
       })
     )
     .catch((err) => {
+      logger.errors(err, "create faq error");
       return res.status(400).json({
         status: "error",
         message: `${err.message}`,

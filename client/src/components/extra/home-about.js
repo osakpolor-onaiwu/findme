@@ -21,7 +21,7 @@ export default function Carousel() {
         </div>
 
         <div id="home-about-img" className="col s12 m6 l7 hide-on-med-and-down">
-          <img className="home-about-img-1" src="./connect.jpg" alt="connect" />
+          <div className="home-about-img-1"></div>
           <img className="home-about-img-2" src="./touch.jpg" alt="touch" />
         </div>
       </section>

@@ -2,7 +2,7 @@ const manufacturer = require("../../models/manufacturer");
 
 const updates = async (req, res, next) => {
   const {
-    name,
+    fullname,
     companyName,
     city,
     state,
@@ -15,7 +15,7 @@ const updates = async (req, res, next) => {
   } = req.body;
 
   const edit = {
-    name,
+    fullname,
     companyName,
     city,
     state,

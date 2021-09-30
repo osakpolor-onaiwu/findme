@@ -1,4 +1,5 @@
 const Faq = require("../../models/FAQ");
+const logger = require("../../logger");
 
 const update = (req, res, next) => {
   const { question, answer } = req.body;
@@ -14,13 +15,14 @@ const update = (req, res, next) => {
         data,
       })
     )
-    .catch((err) =>
+    .catch((err) => {
+      logger.errors(err, "edit faq error");
       res.status(400).json({
         status: "error",
         message: `${err.message}`,
         data: null,
-      })
-    );
+      });
+    });
 };
 
 module.exports = update;

@@ -1,4 +1,5 @@
 const feedback = require("../../models/feedback");
+const logger = require("../../logger");
 
 const create = async (req, res, next) => {
   const body = req.body;
@@ -15,14 +16,16 @@ const create = async (req, res, next) => {
 
   feed
     .save()
-    .then((data) =>
+    .then((data) => {
+      logger.infos(data, "create feedback");
       res.status(200).json({
         status: "Success",
         message: `FEEDBACK CREATED`,
         data,
-      })
-    )
+      });
+    })
     .catch((err) => {
+      logger.errors(err, "create feedback error");
       return res.status(400).json({
         status: "error",
         message: `${err.message}`,
